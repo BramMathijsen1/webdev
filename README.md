@@ -29,7 +29,7 @@ Then open http://localhost:8000/. A local server is needed, because ES modules a
 
 ## Film stills
 
-`frontend/media/<region>/stills/` holds 26 film stills, at most 960 px wide and uncropped, each credited to its rights holder and recorded in `backend/db.json` with the page it was found on. Three Sherlock stills are still missing and show a placeholder; the README.txt in each stills folder lists them. Stills are copyrighted and GitHub Pages sites are public, so decide before publishing whether to commit them (`design.txt: Risks`).
+`frontend/media/<region>/stills/` holds 28 film stills, at most 960 px wide and uncropped, each credited to its rights holder and recorded in `backend/db.json` with the page it was found on. One Sherlock still (Chinatown) is still missing and shows a placeholder; the README.txt in each stills folder lists them. Stills are copyrighted and GitHub Pages sites are public, so decide before publishing whether to commit them (`design.txt: Risks`).
 
 ## Credits
 

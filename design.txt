@@ -33,8 +33,11 @@ DATA
   NHLE heritage registers.
 - Facts first: every fact cites a source, the texts are written from those facts only, and camera data that is not
   documented stays null (the map then shows a dot without a viewing wedge). All records are drafts.
-- Pictures: 31 freely licensed Commons photos and 26 credited film stills (at most 960 px wide, never cropped; three
-  Sherlock stills were not found). 13 clips from official or licensed YouTube channels only, loaded on click.
+- Pictures: 31 freely licensed Commons photos and 28 credited film stills (at most 960 px wide; never cropped here,
+  though two came cropped from their source; a publicity photo and a behind-the-scenes frame are captioned as such).
+  The Chinatown still is missing: the Lucky Cat shop scenes were filmed in Newport, Wales (per a travel blog and a
+  fan guide), and no frame of the Gerrard Street walk was found. 13 clips from official or licensed YouTube channels
+  only, loaded on click.
 - A restricted HTML vocabulary: a text uses only p, em, strong, q, cite, a and span; the pages use the short list in
   css/base.css, styled as what each element is, so a page of plain HTML (about.html) needs no classes.
 
