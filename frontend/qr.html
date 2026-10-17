@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR codes · LMML</title>
+  <meta name="description" content="Printable QR codes: one per location, each opening the location's page.">
+  <meta name="theme-color" content="#1d2b4a">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link id="theme-css" rel="stylesheet" href="themes/affiche/theme.css">
+  <script src="vendor/qrcode/qrcode.js" defer></script>
+  <script src="vendor/translate/translate.js" defer></script>
+  <script type="module" src="js/pages/qr.js"></script>
+</head>
+<body>
+  <a class="lmml-skip" href="#main">Skip to the content</a>
+  <header class="lmml-header"><a class="lmml-brand" href="index.html">LMML</a></header>
+
+  <!-- Printable QR codes for one city (design.txt: Pages), drawn by js/pages/qr.js. -->
+  <main id="main" class="lmml-canvas lmml-qr" tabindex="-1">
+    <section class="lmml-panel" data-panel="sheet">
+      <h1 data-field="title">QR codes</h1>
+      <p class="lmml-lead">Each code opens the page of one location.</p>
+      <button type="button" class="lmml-button lmml-print">Print</button>
+      <div class="lmml-qr-cards"></div>
+    </section>
+  </main>
+
+  <footer class="lmml-footer"></footer>
+  <noscript><p class="lmml-error">LMML needs JavaScript to show its stories, texts and maps.</p></noscript>
+</body>
+</html>

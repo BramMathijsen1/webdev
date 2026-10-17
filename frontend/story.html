@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Story · LMML</title>
+  <meta name="description" content="A story through film and TV locations: its framing, its route by chapter and its map.">
+  <meta name="theme-color" content="#1d2b4a">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link id="theme-css" rel="stylesheet" href="themes/affiche/theme.css">
+  <script src="vendor/leaflet/leaflet.js" defer></script>
+  <script src="vendor/translate/translate.js" defer></script>
+  <script type="module" src="js/pages/story.js"></script>
+</head>
+<body>
+  <a class="lmml-skip" href="#main">Skip to the content</a>
+  <header class="lmml-header"><a class="lmml-brand" href="index.html">LMML</a></header>
+
+  <!-- A story's overview (design.txt: Pages), filled by js/pages/story.js. -->
+  <main id="main" class="lmml-canvas lmml-story" tabindex="-1">
+    <nav class="lmml-tabs" aria-label="Parts of this page">
+      <a href="#overview">Story</a>
+      <a href="#route">Route</a>
+      <a href="#map">Map</a>
+    </nav>
+
+    <div class="lmml-panels">
+      <section class="lmml-panel" id="overview" data-panel="overview">
+        <p class="lmml-kicker" data-field="kicker"></p>
+        <h1 data-field="title">Loading the story…</h1>
+        <p class="lmml-lead" data-field="premise"></p>
+        <dl class="lmml-facts">
+          <dt>Point of view</dt>
+          <dd data-field="pointOfView"></dd>
+          <dt>For</dt>
+          <dd data-field="audience"></dd>
+          <dt>Starts at</dt>
+          <dd data-field="start"></dd>
+          <dt>Length</dt>
+          <dd data-field="length"></dd>
+        </dl>
+        <a class="lmml-button lmml-start" href="index.html">Start the story</a>
+      </section>
+
+      <section class="lmml-panel" id="route" data-panel="route">
+        <h2>The route</h2>
+      </section>
+
+      <section class="lmml-panel" id="map" data-panel="map">
+        <h2>Map</h2>
+        <div class="lmml-map-canvas"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="lmml-footer"></footer>
+  <noscript><p class="lmml-error">LMML needs JavaScript to show its stories, texts and maps.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Location · LMML</title>
+  <meta name="description" content="A film or TV location: where the camera stood, what was filmed there, and how to find it.">
+  <meta name="theme-color" content="#1d2b4a">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link id="theme-css" rel="stylesheet" href="themes/affiche/theme.css">
+  <script src="vendor/leaflet/leaflet.js" defer></script>
+  <script src="vendor/translate/translate.js" defer></script>
+  <script type="module" src="js/pages/location.js"></script>
+</head>
+<body>
+  <a class="lmml-skip" href="#main">Skip to the content</a>
+  <header class="lmml-header"><a class="lmml-brand" href="index.html">LMML</a></header>
+
+  <!-- One place, on its own or as a stop of a story. js/pages/location.js fills the slots
+       (data-field) and the empty containers; the theme lays out the panels (design.txt: Pages; design.txt: Themes and the canvas). -->
+  <main id="main" class="lmml-canvas lmml-location" tabindex="-1">
+    <header class="lmml-heading">
+      <p class="lmml-slug" data-field="slug"></p>
+      <p class="lmml-kicker" data-field="kicker"></p>
+      <h1 data-field="title">Loading the location…</h1>
+      <p class="lmml-productions" data-field="productions"></p>
+    </header>
+
+    <nav class="lmml-tabs" aria-label="Parts of this page">
+      <a href="#text">Text</a>
+      <a href="#pictures">Pictures</a>
+      <a href="#find">Map</a>
+      <a href="#record">Record</a>
+    </nav>
+
+    <div class="lmml-panels">
+      <section class="lmml-panel" id="text" data-panel="text">
+        <section class="lmml-chapter" hidden>
+          <p class="lmml-kicker" data-field="chapterNumber"></p>
+          <h2 data-field="chapterTitle"></h2>
+          <p data-field="chapterIntro"></p>
+        </section>
+
+        <section class="lmml-narration" hidden>
+          <h2 data-field="storyTitle"></h2>
+          <p data-field="narration"></p>
+        </section>
+
+        <!-- The text grid (design.txt: Text grid): the attributes name the text shown; the switches change them. -->
+        <section class="lmml-text" data-tone="adult" data-competence="average" data-length="brief">
+          <h2>About this place</h2>
+          <div class="lmml-versions"></div>
+          <div class="lmml-switches" role="group" aria-label="Change the text">
+            <button type="button" class="lmml-button" data-axis="length" data-direction="-1" data-end="This is already the shortest text.">Tell me less</button>
+            <button type="button" class="lmml-button" data-axis="length" data-direction="1" data-end="This is already the longest text.">Tell me more</button>
+            <button type="button" class="lmml-button" data-axis="competence" data-direction="-1" data-end="This is already the simplest version.">This text is too difficult</button>
+            <button type="button" class="lmml-button" data-axis="competence" data-direction="1" data-end="This is already the most advanced version.">This text is too simple</button>
+            <button type="button" class="lmml-button" data-axis="tone" data-direction="-1" data-end="This is already the version for young visitors.">Do you want to play?</button>
+            <button type="button" class="lmml-button" data-axis="tone" data-direction="1" data-end="This is already the version for scholars.">Do you want additional details and references?</button>
+          </div>
+          <section class="lmml-play">
+            <h3>Play</h3>
+          </section>
+          <section class="lmml-sources">
+            <h3>Details and references</h3>
+          </section>
+        </section>
+      </section>
+
+      <section class="lmml-panel" id="pictures" data-panel="pictures">
+        <h2>Pictures</h2>
+        <div class="lmml-gallery"></div>
+      </section>
+
+      <section class="lmml-panel" id="find" data-panel="find">
+        <section class="lmml-recognise">
+          <h2>How to recognise it</h2>
+          <p data-field="recognise"></p>
+        </section>
+        <section class="lmml-map">
+          <h2>Map</h2>
+          <div class="lmml-map-canvas"></div>
+          <button type="button" class="lmml-button">Show my position</button>
+          <p role="status"></p>
+        </section>
+        <section class="lmml-next" hidden>
+          <h2>Next stop</h2>
+          <p class="lmml-next-name" data-field="nextName"></p>
+          <p class="lmml-next-time" data-field="nextTime"></p>
+          <p data-field="nextDirections"></p>
+        </section>
+      </section>
+
+      <section class="lmml-panel" id="record" data-panel="record">
+        <section class="lmml-scenes" hidden>
+          <h2>On screen</h2>
+        </section>
+        <section class="lmml-meta">
+          <h2>Catalogue record</h2>
+          <table class="lmml-table"><tbody></tbody></table>
+        </section>
+      </section>
+    </div>
+
+    <nav class="lmml-nav" aria-label="Stops of the story" hidden></nav>
+  </main>
+
+  <footer class="lmml-footer"></footer>
+  <noscript><p class="lmml-error">LMML needs JavaScript to show its stories, texts and maps.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LMML · Film locations, told as stories</title>
+  <meta name="description" content="LMML is a companion for visiting film and TV filming locations in Paris and London, one story at a time.">
+  <meta name="theme-color" content="#1d2b4a">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link id="theme-css" rel="stylesheet" href="themes/affiche/theme.css">
+  <script src="vendor/translate/translate.js" defer></script>
+  <script type="module" src="js/pages/index.js"></script>
+</head>
+<body>
+  <a class="lmml-skip" href="#main">Skip to the content</a>
+  <header class="lmml-header"><a class="lmml-brand" href="index.html">LMML</a></header>
+
+  <!-- The start page (design.txt: Pages); js/pages/index.js adds the stories of each city. -->
+  <main id="main" class="lmml-canvas lmml-home" tabindex="-1">
+    <section class="lmml-panel lmml-hero" data-panel="intro">
+      <h1>Walk into the films</h1>
+      <p class="lmml-lead">Pick a story, then follow it from one filming location to the next.</p>
+    </section>
+    <section class="lmml-panel" data-panel="stories" aria-label="Stories">
+      <p class="lmml-loading">Loading the stories…</p>
+    </section>
+  </main>
+
+  <footer class="lmml-footer"></footer>
+  <noscript><p class="lmml-error">LMML needs JavaScript to show its stories, texts and maps.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,381 @@
+/* SCRIPT: the screenplay theme (design.txt: Themes and the canvas)
+
+   Inspiration  The screenplay page and the paperwork of a film shoot: 12-point Courier on US-Letter
+                paper, scene headings ("sluglines") in capitals such as EXT. RUE LEPIC – DAY, scene
+                numbers in both margins, revised pages on coloured paper, storyboards, call sheets
+                and the stripboard schedule.
+   Audience     Film fans and scholars (Bruno and Beatrix, Amélie, scene by scene).
+   Rules        - Courier Prime (a Courier drawn for screenplays) for everything, at one size;
+                  headings are capitals and underlines, never larger type.
+                - Black ink on paper and one red pencil for links (7:1 on paper).
+                - The canvas is a production desk: every panel is a sheet of paper on it. A story's
+                  chapters take the colours of revision pages. Pictures are storyboard frames, the
+                  record is a call sheet, the route a stripboard.
+                - Text first. In landscape the script page comes first, on the left; on a screen
+                  wider than 3:2 the storyboard and the call sheet stand beside it in two columns, on
+                  a squarer one in one. In portrait the text is the first panel.
+                - Print: US-Letter with a 1.5-inch binding margin.
+*/
+
+@font-face { font-family: "Courier Prime"; src: url("fonts/courier-prime-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Courier Prime"; src: url("fonts/courier-prime-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Courier Prime"; src: url("fonts/courier-prime-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Courier Prime"; src: url("fonts/courier-prime-latin-700-italic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+
+/* -------------------------------------------------------------------- palette */
+
+:root {
+  --paper: #fbfaf4;
+  --ink: #141414;
+  --pencil: #a3201b;
+
+  /* Revision page colours, in the industry's order: white, blue, pink, yellow, green. */
+  --rev-2: #e1eaf6;
+  --rev-3: #f7e2e7;
+  --rev-4: #f9f2c8;
+  --rev-5: #e3f0dc;
+
+  --font-body: "Courier Prime", "Courier New", monospace;
+  --font-display: var(--font-body);
+  --size-title: 1.0625rem;
+  --color-bg: #e4e1d6; /* the desk */
+  --color-panel: var(--paper);
+  --color-text: var(--ink);
+  --color-muted: #4a4a4a;
+  --color-accent: var(--pencil);
+  --color-accent-text: #ffffff;
+  --color-line: #8f8f8f;
+  --measure: 40rem;
+}
+
+/* One size of type: headings are capitals and underlines. */
+h1,
+h2,
+h3,
+.lmml-heading h1,
+.lmml-card h3,
+.lmml-qr-card h2 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  text-decoration: underline;
+}
+
+a {
+  color: var(--pencil);
+}
+
+/* ---------------------------------------------------------------------- frame */
+
+.lmml-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink);
+}
+
+.lmml-brand {
+  letter-spacing: 0.3em;
+  text-decoration: underline;
+}
+
+.lmml-controls select {
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+}
+
+.lmml-footer {
+  justify-content: center;
+  background: var(--paper);
+  border-top: 1px solid var(--ink);
+  text-align: center;
+}
+
+/* Every panel is a sheet of paper on the desk, with a wide left margin as on a script page. */
+.lmml-panel,
+.lmml-heading {
+  padding-left: calc(var(--pad) * 1.6);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* The heading's left margin holds the stop number of the slugline. */
+.lmml-heading {
+  padding: var(--pad) var(--pad) 0.5rem max(2.75em, calc(var(--pad) * 1.6));
+  background: var(--paper);
+}
+
+.lmml-tabs a {
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------- shared */
+
+.lmml-kicker {
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.lmml-lead {
+  font-size: 1.0625rem;
+}
+
+/* Buttons are typewriter keys. */
+.lmml-button {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.lmml-button:active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+/* The record and the camera set-up are a call sheet. */
+.lmml-table th,
+.lmml-table td {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--ink);
+}
+
+.lmml-table th {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------ start page: title page, index cards */
+
+.lmml-home {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+}
+
+/* The start page is a title page: the title centred halfway down the sheet. */
+.lmml-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.lmml-card {
+  border: 0;
+  border-top: 3px solid var(--pencil);
+  background: repeating-linear-gradient(#ffffff 0 1.575rem, #c7d6ec 1.575rem 1.625rem);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.lmml-card h3 {
+  text-decoration: none;
+}
+
+.lmml-card h3 a {
+  color: var(--ink);
+}
+
+/* ----------------------------------------------------- story page: stripboard */
+
+.lmml-story {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr);
+}
+
+[data-panel="overview"] {
+  text-align: center;
+}
+
+.lmml-lead,
+.lmml-facts {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.lmml-route-chapter h3 {
+  margin: 0;
+  padding: 0.2rem 0.5rem;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.lmml-stops {
+  padding: 0;
+  list-style: none;
+}
+
+/* Each stop is a strip; exterior day scenes are yellow on a stripboard. */
+.lmml-stops li {
+  margin: 0;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--ink);
+  border-top: 0;
+  background: var(--rev-4);
+}
+
+.lmml-stops li::before {
+  content: counter(list-item) ". ";
+  font-weight: 700;
+}
+
+.lmml-map-canvas {
+  border: 1px solid var(--ink);
+}
+
+/* Map tiles as a photocopy. */
+.leaflet-tile-pane {
+  filter: grayscale(1) contrast(1.05);
+}
+
+/* -------------------------------------------------- location page: text first */
+
+.lmml-location {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.85fr) minmax(0, 0.95fr);
+  grid-template-areas:
+    "heading pictures find"
+    "text pictures find"
+    "text pictures record"
+    "nav nav nav";
+}
+
+/* A story's chapters are typed on the colours of revision pages. */
+.lmml-location[data-chapter="2"] :is(.lmml-heading, [data-panel="text"]) { background: var(--rev-2); }
+.lmml-location[data-chapter="3"] :is(.lmml-heading, [data-panel="text"]) { background: var(--rev-3); }
+.lmml-location[data-chapter="4"] :is(.lmml-heading, [data-panel="text"]) { background: var(--rev-4); }
+.lmml-location[data-chapter="5"] :is(.lmml-heading, [data-panel="text"]) { background: var(--rev-5); }
+
+/* The slugline opens the scene, with the stop number in both margins. */
+.lmml-slug {
+  display: block;
+  position: relative;
+  font-weight: 700;
+}
+
+.lmml-slug[data-step]::before,
+.lmml-slug[data-step]::after {
+  content: attr(data-step);
+  position: absolute;
+  top: 0;
+}
+
+.lmml-slug[data-step]::before {
+  right: 100%;
+  margin-right: 0.6em;
+}
+
+.lmml-slug[data-step]::after {
+  right: 0;
+}
+
+.lmml-slug[data-step] {
+  padding-right: 2.5rem;
+}
+
+/* The slugline is the heading here; the title stays for screen readers. */
+.lmml-heading h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.lmml-chapter {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ink);
+}
+
+/* The narration is set as dialogue: a narrow centred column under the story's name. */
+.lmml-narration {
+  max-width: 36ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lmml-narration h2 {
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Pictures are storyboard frames, numbered and labelled with the aspect ratio. */
+.lmml-figure {
+  padding: 0.5rem;
+  border: 1px solid var(--ink);
+  background: #ffffff;
+}
+
+.lmml-figure::before {
+  content: "FRAME " attr(data-frame);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.lmml-figure:not([data-aspect=""])::before {
+  content: "FRAME " attr(data-frame) " · " attr(data-aspect);
+}
+
+.lmml-next {
+  padding: 1rem;
+  border: 1px dashed var(--ink);
+}
+
+.lmml-next-name {
+  font-size: 1.0625rem;
+}
+
+.lmml-nav {
+  align-items: center;
+  background: var(--paper);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* -------------------------------------------- squarer screens, and portrait */
+
+@media (orientation: landscape) and (max-aspect-ratio: 3/2) {
+  .lmml-story {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "overview route" "map route";
+  }
+
+  .lmml-location {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+    grid-template-areas:
+      "heading pictures"
+      "text pictures"
+      "text find"
+      "text record"
+      "nav nav";
+  }
+}
+
+@media (orientation: portrait), (orientation: landscape) and (max-height: 32rem) {
+  .lmml-tabs a[aria-current="true"] {
+    text-decoration: underline;
+  }
+}
+
+/* ---------------------------------------------------------------------- print */
+
+@media print {
+  @page {
+    size: letter;
+    margin: 1in 1in 1in 1.5in;
+  }
+
+  body {
+    background: none;
+    font-size: 12pt;
+  }
+
+  .lmml-panel,
+  .lmml-heading {
+    padding: 0;
+    background: none !important;
+    box-shadow: none;
+  }
+}

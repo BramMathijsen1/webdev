@@ -1,0 +1,859 @@
+/* LMML base stylesheet (design.txt: Themes and the canvas): the canvas, the HTML vocabulary, plain defaults and
+   accessibility. The active theme (themes/<id>/theme.css, loaded after this file) restyles it all
+   through the variables below, the elements of the vocabulary and the .lmml-* hooks.
+
+   THE CANVAS
+   Every page is exactly as big as the viewport: the header, the canvas and the footer fill it,
+   and nothing scrolls but the panels inside the canvas, each in its own container.
+   - Landscape: the panels stand side by side, in a grid that each theme sets, also by aspect
+     ratio (wider than 3:2, or squarer).
+   - Portrait: the panels stand in a row that shows one at a time; swipe, or use the tabs
+     (.lmml-tabs), to move between them.
+
+   HTML VOCABULARY (design.txt: Data): the only elements the pages and the texts use
+   Structure  header nav main section article div footer h1 h2 h3 p ul ol li dl dt dd
+              table caption tbody tr th td figure figcaption img iframe details summary
+   Inline     a em strong q cite span
+   Controls   button label select optgroup option
+   Plain elements are styled as what they are (h1 the page title, h2 a section label, h3 a small
+   heading, …), so a page of plain HTML such as about.html needs no classes. Classes (.lmml-*) and
+   data-* attributes mark what plain HTML cannot say.
+
+   THEME CONTRACT: the hooks a theme can rely on
+   <html>      data-theme, data-region (paris | london | empty), data-story
+   Frame       .lmml-header .lmml-brand .lmml-controls .lmml-control-name .lmml-footer .lmml-skip
+   Canvas      .lmml-canvas, one per page: .lmml-home .lmml-story .lmml-location .lmml-qr .lmml-page
+               .lmml-tabs (a[aria-current]) .lmml-panels .lmml-panel[data-panel] .lmml-heading .lmml-nav
+               panels  home: intro stories · story: overview route map · location: text pictures
+                       find record · qr: sheet · about and colophon: page
+   Shared      .lmml-kicker .lmml-lead .lmml-button .lmml-table .lmml-loading .lmml-error
+   Start       .lmml-hero .lmml-region .lmml-cards .lmml-card .lmml-card-meta
+   Story       .lmml-facts .lmml-start .lmml-route-chapter[data-chapter] .lmml-stops .lmml-leg
+   Location    .lmml-location[data-chapter] .lmml-slug[data-step] .lmml-productions .lmml-chapter
+               .lmml-narration .lmml-text[data-tone][data-competence][data-length]
+               .lmml-version[data-tone][data-length] [data-level] .lmml-switches
+               button[data-axis][data-direction][aria-disabled] .lmml-play .lmml-sources .lmml-options
+               .lmml-gallery .lmml-figure[data-kind][data-frame][data-aspect] .lmml-placeholder
+               .lmml-credit .lmml-recognise .lmml-map .lmml-next .lmml-next-name .lmml-next-time
+               .lmml-scenes .lmml-scene .lmml-camera .lmml-costume .lmml-meta
+   QR codes    .lmml-print .lmml-qr-cards .lmml-qr-card .lmml-qr-code .lmml-qr-url
+   Map         .lmml-map-canvas; on the map .lmml-pin (.is-current) .lmml-line (.is-transit) .lmml-cone
+               .lmml-camera-dot .lmml-me .lmml-me-accuracy
+*/
+
+:root {
+  --font-body: system-ui, sans-serif;
+  --font-display: var(--font-body);
+  --size-title: clamp(1.75rem, 3.2vw + 0.8rem, 2.75rem);
+  --color-bg: #ececec;
+  --color-panel: #ffffff;
+  --color-text: #1b1b1b;
+  --color-muted: #555555;
+  --color-accent: #0b57d0;
+  --color-accent-text: #ffffff;
+  --color-line: #cccccc;
+  --measure: 38rem;
+  --gap: clamp(0.5rem, 1.2vmin, 1rem);
+  --pad: clamp(0.75rem, 2.2vmin, 1.5rem);
+}
+
+/* ------------------------------------------------------------- the vocabulary */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--size-title);
+}
+
+/* A section label. */
+h2 {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+* + h2 {
+  margin-top: 1.5rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p,
+ul,
+ol,
+dl,
+figure,
+table,
+details {
+  margin: 0 0 1rem;
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+li + li {
+  margin-top: 0.25rem;
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin: 0 0 0.5rem;
+}
+
+a {
+  color: inherit;
+  overflow-wrap: anywhere;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+}
+
+cite {
+  font-style: italic;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+caption {
+  padding-bottom: 0.25rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+summary {
+  cursor: pointer;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.lmml-skip {
+  position: absolute;
+  left: -999px;
+}
+
+.lmml-skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  background: var(--color-panel);
+}
+
+/* ----------------------------------------------------------------- the canvas */
+
+body {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100vh; /* older browsers */
+  height: 100dvh; /* the visible viewport on phones, without the browser's bars */
+  overflow: hidden;
+}
+
+/* The page stays invisible until js/page.js has loaded its theme (it then sets data-theme), so it
+   never shows in the wrong one; after three seconds it shows anyway, in case a script failed. */
+html:not([data-theme]) body {
+  visibility: hidden;
+  animation: lmml-reveal 0s 3s forwards;
+}
+
+@keyframes lmml-reveal {
+  to {
+    visibility: visible;
+  }
+}
+
+.lmml-header,
+.lmml-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  padding: 0.5rem var(--pad);
+}
+
+.lmml-brand {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.lmml-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+
+.lmml-controls select {
+  max-width: 11rem;
+  margin-left: 0.3rem;
+}
+
+.lmml-footer {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.lmml-footer p,
+.lmml-footer nav {
+  margin: 0;
+}
+
+.lmml-canvas {
+  display: grid;
+  min-height: 0;
+  gap: var(--gap);
+  padding: var(--gap);
+  overflow: hidden;
+}
+
+/* A panel scrolls on its own; it never makes the page scroll. */
+.lmml-panel {
+  min-width: 0;
+  min-height: 0;
+  padding: var(--pad);
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: var(--color-panel);
+}
+
+.lmml-panel > :last-child {
+  margin-bottom: 0;
+}
+
+/* Each panel, the heading and the stop navigation are grid areas of their own name. */
+[data-panel="intro"] { grid-area: intro; }
+[data-panel="stories"] { grid-area: stories; }
+[data-panel="overview"] { grid-area: overview; }
+[data-panel="route"] { grid-area: route; }
+[data-panel="map"] { grid-area: map; }
+[data-panel="text"] { grid-area: text; }
+[data-panel="pictures"] { grid-area: pictures; }
+[data-panel="find"] { grid-area: find; }
+[data-panel="record"] { grid-area: record; }
+.lmml-heading { grid-area: heading; }
+.lmml-nav { grid-area: nav; }
+
+.lmml-panels {
+  display: contents;
+}
+
+.lmml-tabs {
+  display: none;
+}
+
+/* The default layouts in landscape; each theme sets its own (design.txt: Themes and the canvas). */
+.lmml-home {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  grid-template-areas: "intro stories";
+}
+
+.lmml-story {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas: "overview route map";
+}
+
+.lmml-location {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr) auto;
+  grid-template-areas:
+    "heading heading heading"
+    "text pictures find"
+    "text pictures record"
+    "nav nav nav";
+}
+
+.lmml-qr,
+.lmml-page {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* A page of prose (about, colophon) keeps a readable line length. */
+.lmml-page > .lmml-panel > * {
+  max-width: var(--measure);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Row mode: on a portrait screen, and on a landscape screen too low for a grid (a phone on its
+   side), the canvas is a column and its panels stand in a row: one at a time in portrait, two at
+   a time in landscape. Swipe, or use the tabs, to move along the row. */
+@media (orientation: portrait), (orientation: landscape) and (max-height: 32rem) {
+  .lmml-canvas:has(> .lmml-panels) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lmml-canvas > * {
+    flex: none;
+  }
+
+  .lmml-canvas > .lmml-panels {
+    flex: 1 1 0;
+  }
+
+  .lmml-tabs {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .lmml-tabs a {
+    flex: 1 1 0;
+    padding: 0.35rem 0.25rem;
+    border-bottom: 3px solid transparent;
+    font-size: 0.85rem;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .lmml-tabs a[aria-current="true"] {
+    border-bottom-color: currentColor;
+    font-weight: 700;
+  }
+
+  .lmml-panels {
+    display: flex;
+    gap: var(--gap);
+    min-height: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .lmml-panels > .lmml-panel {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+
+  .lmml-control-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .lmml-controls select {
+    max-width: 7.5rem;
+    margin-left: 0;
+  }
+}
+
+/* Portrait: every page is a column; the last panel (or the row) takes the rest of the height. */
+@media (orientation: portrait) {
+  .lmml-canvas {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lmml-canvas > .lmml-panel:last-child {
+    flex: 1 1 0;
+  }
+}
+
+/* A phone on its side: two panels at a time, and a lower frame. */
+@media (orientation: landscape) and (max-height: 32rem) {
+  .lmml-panels > .lmml-panel {
+    flex-basis: calc((100% - var(--gap)) / 2);
+  }
+
+  .lmml-header,
+  .lmml-footer {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+
+  /* The footer keeps to one line, its first sentence shortened if need be. */
+  .lmml-footer {
+    flex-wrap: nowrap;
+    font-size: 0.7rem;
+  }
+
+  .lmml-footer p {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .lmml-footer nav {
+    flex: none;
+  }
+
+  .lmml-heading h1 {
+    font-size: 1.25rem;
+  }
+
+  .lmml-heading .lmml-kicker,
+  .lmml-productions {
+    display: none;
+  }
+
+  .lmml-tabs a {
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+  }
+}
+
+/* --------------------------------------------------------------------- shared */
+
+.lmml-kicker {
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.lmml-lead {
+  max-width: var(--measure);
+  font-size: 1.15rem;
+}
+
+.lmml-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.lmml-button[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.lmml-table {
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.lmml-table th,
+.lmml-table td {
+  padding: 0.35rem 0.75rem 0.35rem 0;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.lmml-table th {
+  width: 9rem;
+}
+
+.lmml-loading,
+.lmml-error {
+  padding: 1rem;
+  border-left: 4px solid var(--color-accent);
+}
+
+.lmml-error {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+/* ----------------------------------------------------------------- start page */
+
+.lmml-region + .lmml-region {
+  margin-top: 1.5rem;
+}
+
+.lmml-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  gap: var(--gap);
+}
+
+.lmml-card {
+  padding: 1.25rem;
+  border: 1px solid var(--color-line);
+}
+
+.lmml-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+}
+
+.lmml-card-meta {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* ----------------------------------------------------------------- story page */
+
+.lmml-facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+}
+
+.lmml-facts dd {
+  margin: 0;
+}
+
+.lmml-route-chapter h3 {
+  font-size: 1rem;
+}
+
+.lmml-stops {
+  padding-left: 2rem;
+}
+
+.lmml-leg {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+/* A map panel is all map. */
+[data-panel="map"] {
+  display: flex;
+  flex-direction: column;
+}
+
+[data-panel="map"] .lmml-map-canvas {
+  flex: 1 1 auto;
+  min-height: 12rem;
+}
+
+/* -------------------------------------------------------------- location page */
+
+.lmml-heading {
+  min-width: 0;
+}
+
+.lmml-heading > * {
+  margin-bottom: 0.25rem;
+}
+
+.lmml-heading h1 {
+  font-size: clamp(1.5rem, 2.4vw + 0.6rem, 2.4rem);
+}
+
+.lmml-slug {
+  display: none;
+}
+
+.lmml-productions {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.lmml-chapter h2 {
+  margin-top: 0;
+}
+
+.lmml-chapter,
+.lmml-narration,
+.lmml-text,
+.lmml-recognise,
+.lmml-map,
+.lmml-next,
+.lmml-scenes {
+  margin-bottom: 1.5rem;
+}
+
+/* The text grid (design.txt: Text grid). The text section names the text to show in data-tone,
+   data-competence and data-length; every other version, and every passage marked for another
+   competence level (data-level), is hidden. The young tone adds the games, the scholar tone the
+   references. */
+.lmml-text[data-tone="young"] .lmml-version:not([data-tone="young"]),
+.lmml-text[data-tone="adult"] .lmml-version:not([data-tone="adult"]),
+.lmml-text[data-tone="scholar"] .lmml-version:not([data-tone="scholar"]),
+.lmml-text[data-length="brief"] .lmml-version:not([data-length="brief"]),
+.lmml-text[data-length="mid"] .lmml-version:not([data-length="mid"]),
+.lmml-text[data-length="long"] .lmml-version:not([data-length="long"]),
+.lmml-text[data-competence="intro"] [data-level]:not([data-level~="intro"]),
+.lmml-text[data-competence="average"] [data-level]:not([data-level~="average"]),
+.lmml-text[data-competence="advanced"] [data-level]:not([data-level~="advanced"]),
+.lmml-text:not([data-tone="young"]) .lmml-play,
+.lmml-text:not([data-tone="scholar"]) .lmml-sources {
+  display: none;
+}
+
+.lmml-switches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* The switches and quiz answers are quieter than the main buttons. */
+.lmml-switches .lmml-button,
+.lmml-options .lmml-button {
+  border: 1px solid currentColor;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.lmml-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.lmml-sources ol {
+  font-size: 0.875rem;
+}
+
+/* Pictures of any shape fit the panel whole: never cropped, never taller than the screen allows. */
+.lmml-gallery {
+  display: grid;
+  gap: var(--gap);
+}
+
+.lmml-figure {
+  margin: 0;
+}
+
+.lmml-figure img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: min(60vh, 34rem);
+  margin: 0 auto;
+}
+
+.lmml-figure figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.875rem;
+}
+
+.lmml-figure iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.lmml-placeholder {
+  margin: 0;
+  padding: 2rem 1rem;
+  border: 2px dashed var(--color-line);
+  font-size: 0.875rem;
+  overflow-wrap: anywhere;
+}
+
+.lmml-map-canvas {
+  height: clamp(12rem, 38vh, 24rem);
+  margin-bottom: 0.5rem;
+}
+
+.lmml-next-name {
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.lmml-scene + .lmml-scene {
+  margin-top: 1.5rem;
+}
+
+/* Previous stop, the story, next stop: one line, each name shortened if it is long. */
+.lmml-nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.25rem var(--pad);
+  font-size: 0.9rem;
+}
+
+.lmml-nav > * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lmml-nav > :last-child {
+  text-align: right;
+}
+
+/* -------------------------------------------------------------- map overlays */
+
+.lmml-pin {
+  display: grid;
+  place-items: center;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  font: 700 13px/1 var(--font-body);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+.lmml-pin.is-current {
+  background: var(--color-text);
+  color: var(--color-panel);
+}
+
+.lmml-line {
+  stroke: var(--color-accent);
+  stroke-width: 4;
+}
+
+.lmml-line.is-transit {
+  stroke-width: 3;
+  stroke-dasharray: 6 8;
+}
+
+.lmml-cone {
+  fill: var(--color-accent);
+  fill-opacity: 0.25;
+  stroke: var(--color-accent);
+  stroke-width: 1.5;
+}
+
+.lmml-camera-dot {
+  fill: var(--color-text);
+  fill-opacity: 1;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.lmml-me {
+  fill: #1a73e8;
+  fill-opacity: 1;
+  stroke: #ffffff;
+  stroke-width: 3;
+}
+
+.lmml-me-accuracy {
+  fill: #1a73e8;
+  fill-opacity: 0.12;
+  stroke: #1a73e8;
+  stroke-width: 1;
+}
+
+/* ------------------------------------------------------------------- QR codes */
+
+.lmml-qr-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr));
+  gap: var(--gap);
+  margin-top: 1rem;
+}
+
+.lmml-qr-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid var(--color-line);
+  break-inside: avoid;
+}
+
+.lmml-qr-card h2 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.lmml-qr-code svg {
+  display: block;
+  width: 100%;
+  max-width: 10rem;
+  margin: 0 auto;
+}
+
+.lmml-qr-url {
+  margin: auto 0 0;
+  font-size: 0.7rem;
+  overflow-wrap: anywhere;
+}
+
+/* ---------------------------------------------------------------------- print */
+
+/* On paper there is no viewport: the canvas flows from page to page, and what only works on a
+   screen (menus, tabs, switches, maps, buttons) is left out. */
+@media print {
+  body {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+
+  .lmml-canvas,
+  .lmml-panels {
+    display: block;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .lmml-panel {
+    margin-bottom: 1rem;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .lmml-skip,
+  .lmml-controls,
+  .lmml-tabs,
+  .lmml-switches,
+  .lmml-map,
+  [data-panel="map"],
+  .lmml-nav,
+  .lmml-button,
+  .lmml-footer nav {
+    display: none !important;
+  }
+
+  .lmml-figure,
+  .lmml-scene,
+  tr {
+    break-inside: avoid;
+  }
+}

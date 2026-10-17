@@ -1,0 +1,16 @@
+[
+  {
+    "id": "affiche",
+    "name": "Affiche",
+    "description": "Travel posters of the 1920s and 30s: visual first, flat bold colours, Art Deco titles.",
+    "inspiration": "A. M. Cassandre's railway posters; London Underground posters",
+    "themeColor": "#1d2b4a"
+  },
+  {
+    "id": "script",
+    "name": "Script",
+    "description": "Screenplay pages and production paperwork: text first, typewriter type, sluglines and call sheets.",
+    "inspiration": "Screenplay format, call sheets, storyboards and coloured revision pages",
+    "themeColor": "#fbfaf4"
+  }
+]

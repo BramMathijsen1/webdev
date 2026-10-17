@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colophon · LMML</title>
+  <meta name="description" content="What LMML is for, where its content comes from, and who holds the rights.">
+  <meta name="theme-color" content="#1d2b4a">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link id="theme-css" rel="stylesheet" href="themes/affiche/theme.css">
+  <script src="vendor/translate/translate.js" defer></script>
+  <script type="module" src="js/pages/colophon.js"></script>
+</head>
+<body>
+  <a class="lmml-skip" href="#main">Skip to the content</a>
+  <header class="lmml-header"><a class="lmml-brand" href="index.html">LMML</a></header>
+
+  <!-- The course disclaimer, tailored to LMML (design.txt: Pages). js/pages/colophon.js fills the
+       four lists (data-list) from the database, so they always match the content. -->
+  <main id="main" class="lmml-canvas lmml-page" tabindex="-1">
+    <article class="lmml-panel" data-panel="page">
+      <h1>Colophon</h1>
+      <p>The purpose of this web site is to explore various types of typographic and layout style for specialized tourist visits, as an end-of-course project for the “Information Modeling and Web Technologies” course of the Master's Degree in Digital Humanities and Digital Knowledge of the University of Bologna, under the supervision of prof. Fabio Vitali.</p>
+      <p>The film and TV locations in this web site have been selected for the scenes filmed there and for the quality of their sources. Their texts were written for this site from the facts recorded in those sources; their photos, film stills and video clips come from the pages listed with them. Their publication here is not intended to be an alternative to or a replacement for their original locations:</p>
+
+      <h2>Facts and references</h2>
+      <ol data-list="references"></ol>
+      <h2>Photos</h2>
+      <ol data-list="photos"></ol>
+      <h2>Film stills</h2>
+      <ol data-list="stills"></ol>
+      <h2>Video clips</h2>
+      <ol data-list="videos"></ol>
+
+      <p>Copyright and related rights on the content remain with their original owners. Copyright on the typographic and layout choices: 2026 © Bram Mathijsen.</p>
+
+      <h2>Typefaces and tools</h2>
+      <p>Limelight, Jost and Courier Prime (SIL Open Font License). The maps are drawn with Leaflet, with map data © OpenStreetMap contributors; the QR codes with qrcode-generator; the translations with translate.js and Microsoft's translation service, only when a visitor chooses another language.</p>
+    </article>
+  </main>
+
+  <footer class="lmml-footer"></footer>
+  <noscript><p class="lmml-error">LMML needs JavaScript to show its stories, texts and maps.</p></noscript>
+</body>
+</html>

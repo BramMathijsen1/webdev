@@ -1,0 +1,90 @@
+LMML: KEY DESIGN DECISIONS
+==========================
+The important design decisions of LMML, each with its reason. Keep this file short: add or change a line only
+for a decision that matters and is specific to this project. Last updated: 2026-10-17.
+
+
+WHAT LMML IS
+- A companion web app for walking tours of film and TV locations in Paris and London, told as stories, on a Leaflet
+  map with the visitor's live position, in switchable themes. An end-of-course project for Information Modeling
+  and Web Technologies (University of Bologna).
+
+
+ARCHITECTURE
+- A static site for GitHub Pages: no server, no build step, no npm. Every URL is relative (the site lives under
+  /webdev/).
+- Backend: backend/db.json (the database) and backend/api.js, a pure function handle(db, path) → {status, body}
+  with read-only REST-style routes (/regions, /narratives, /locations/<id>, /sources). js/apiClient.js loads db.json
+  once and calls it, so the pages read data as from a web API, and a real server could replace it unchanged.
+- HTML first: each HTML page holds its own structure, with data-field slots that its module fills from the API.
+  js/page.js builds the frame all pages share (story, theme and language menus, footer, settings), so the frame is
+  written once, not copied into six pages.
+- The visitor's settings (a theme picked by hand, the text cell, the active story) are kept in localStorage.
+
+
+DATA
+- 32 locations, 15–20 per city as the brief asks: Paris 17 (Amélie, Emily in Paris, and monuments seen on screen),
+  London 15 (Love Actually, Sherlock). The Devil Wears Prada and Fleabag were removed by the owner's decision.
+- db.json is normalised: records point to each other by id; joins and totals are computed in api.js.
+- Every location has the same core (address, position, identifiers, facts, scenes, media, texts, references,
+  cataloguing), plus tailored blocks only where they fit (heritage, architecture, business, transport, access).
+- Each kind of fact uses the standard that suits it: schema.org types, CSL-JSON references, EXIF GPS fields for the
+  camera's position and bearing, IPTC and Dublin Core for pictures, Wikidata and OpenStreetMap ids, the Mérimée and
+  NHLE heritage registers.
+- Facts first: every fact cites a source, the texts are written from those facts only, and camera data that is not
+  documented stays null (the map then shows a dot without a viewing wedge). All records are drafts.
+- Pictures: 31 freely licensed Commons photos and 26 credited film stills (at most 960 px wide, never cropped; three
+  Sherlock stills were not found). 13 clips from official or licensed YouTube channels only, loaded on click.
+- A restricted HTML vocabulary: a text uses only p, em, strong, q, cite, a and span; the pages use the short list in
+  css/base.css, styled as what each element is, so a page of plain HTML (about.html) needs no classes.
+
+
+TEXT GRID
+- 9 texts per location (3 tones × 3 lengths), stored as HTML. A passage meant for one competence level is a
+  span[data-level], so the 9 texts cover all 27 cells. Word targets: brief ≤ 60, mid 120–200, long ≥ 300.
+- All 9 texts are in the page. The text section names the cell to show in data-tone, data-competence and
+  data-length, and nine CSS rules hide everything else. Each of the six switches changes one attribute, and is
+  disabled, with a tooltip, at the end of its axis. The young tone adds games, the scholar tone the references.
+
+
+STORIES
+- A story decides which locations appear and in which order, the directions, how to recognise each stop, the
+  chapter introductions, the narration, the pictures, the starting text cell and the theme. Choosing a story
+  applies all of it at once (Automatic).
+- Two Parisiennes: Alice's class trip, young texts, Affiche. Amélie, scene by scene: Script. Shot for shot: Bruno
+  and Beatrix, with camera set-ups and costume notes, Script. The game is on: a Sherlock trail for children, Affiche.
+- A location page follows the active story, so a scanned QR code opens as a stop of the story being followed.
+
+
+THEMES AND THE CANVAS
+- A theme is CSS only: themes/<id>/theme.css, listed in themes/themes.json. It sets the fonts, colours, layout and
+  order, picture framing and printed page; replacing a theme needs no JavaScript. Each theme.css opens with its
+  rationale.
+- Affiche, after 1920s–30s travel posters (Cassandre, the London Underground): visual first. The pictures lead, with
+  flat inks per city, the route as a railway line and the record as a timetable; it prints on A4.
+- Script, after screenplays and production paperwork: text first. Courier at one size, sluglines with the stop
+  number in both margins, chapters on revision-page colours, storyboard frames and a call sheet; it prints on
+  US Letter.
+- The canvas is exactly the size of the viewport, and only the panels scroll, each in its own container. In
+  landscape the panels stand side by side: three columns on screens wider than 3:2, two on squarer ones, arranged
+  by each theme. In portrait they stand in a row, one at a time, with tabs; a phone on its side shows two. On paper
+  the canvas flows onto pages.
+- The page stays hidden until its theme has loaded, so it never flashes in the wrong one.
+
+
+PAGES
+- Start, story (overview, route, map), location or story stop (text, pictures, map, record), QR codes, about, and
+  colophon (the course disclaimer, listing every source from the data via /sources).
+- The map shows the numbered stops, each camera position as a wedge (its bearing and lens width) and the visitor's
+  position; walking times come from OSRM, computed once and stored.
+
+
+LANGUAGE
+- The texts are written in English, the default. A language menu (translate.js, vendored) translates a page into
+  French, Dutch, German, Spanish or Italian through Microsoft's translation service, only when a visitor asks.
+
+
+RISKS
+- Film stills are copyrighted and the site is public: decide before publishing whether to commit them (fallback:
+  git-ignore frontend/media/*/stills/, and the pages show placeholders).
+- Machine translation varies in quality, the clips depend on YouTube, and every record still needs an on-site check.
