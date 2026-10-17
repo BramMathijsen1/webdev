@@ -1,4 +1,4 @@
-// The frame every page shares (design.txt: Architecture): the visitor's settings, the theme, the header with
+// The frame every page shares (design.md: 1. Technical choices): the visitor's settings, the theme, the header with
 // its three menus (story, theme, language), the footer, the tabs of a portrait screen and the
 // error state. A page module calls setupPage() once it knows its story and region; a page without
 // data of its own (about.html) calls it from a one-line script.
@@ -38,7 +38,7 @@ export function saveSettings(settings) {
 
 // -------------------------------------------------------------------- themes
 
-// A theme is a folder in themes/ with a theme.css, listed in themes/themes.json (design.txt: Themes and the canvas).
+// A theme is a folder in themes/ with a theme.css, listed in themes/themes.json (design.md: 3.2 and 3.3).
 // css/base.css keeps the page invisible until <html> has a data-theme, so it never shows in the
 // wrong theme.
 let themeList = null;
@@ -78,7 +78,7 @@ export async function setupPage({ settings = loadSettings(), story = null, regio
   document.documentElement.dataset.region = region;
   document.documentElement.dataset.story = story ? story.id : '';
 
-  // A theme picked by hand wins; otherwise the story's own theme (Automatic, design.txt: Stories), else the first.
+  // A theme picked by hand wins; otherwise the story's own theme (Automatic, design.md: 3.4 Stories), else the first.
   const wanted = settings.theme || (story && story.theme);
   const theme = themes.find((t) => t.id === wanted) || themes[0];
 
@@ -146,7 +146,7 @@ function control(name, field) {
   return el('label', {}, el('span', { class: 'lmml-control-name' }, name), ' ', field);
 }
 
-// The language menu (design.txt: Language): the texts are written in English, and translate.js (MIT,
+// The language menu (design.md: 1. Technical choices): the texts are written in English, and translate.js (MIT,
 // vendored in vendor/translate/) translates the page into the visitor's language with Microsoft's
 // free translation service. It remembers the choice and also translates what the page draws later.
 function startTranslation() {

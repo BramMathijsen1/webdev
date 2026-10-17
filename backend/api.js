@@ -1,4 +1,4 @@
-// LMML API handler: the "backend" of the app (design.txt: Architecture).
+// LMML API handler: the "backend" of the app (design.md: 1. Technical choices).
 //
 // handle(db, path) answers one read-only request, like a small REST API:
 //   db   = the parsed backend/db.json
@@ -149,7 +149,7 @@ function getNarrative(db, id) {
 
 // ------------------------------------------------------------------ sources
 
-// The original locations of the content (design.txt: Pages, colophon): the references the facts cite,
+// The original locations of the content (the colophon page): the references the facts cite,
 // then each picture and clip with the page it comes from. A still not found yet has no source.
 function listSources(db) {
   const media = db.locations.flatMap((location) => location.media.map((item) => ({ ...item, place: location.name })));

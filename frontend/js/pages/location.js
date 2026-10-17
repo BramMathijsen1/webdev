@@ -1,9 +1,9 @@
-// The location page (design.txt: Pages): one place, on its own or as a stop in a story.
+// The location page: one place, on its own or as a stop in a story.
 //   location.html?id=<location>                       the place on its own
 //   location.html?id=<location>&story=<id>&step=<n>   stop n of a story
 // location.html holds the parts of the page; this module fills them from the API. Without a story
 // in the URL, the visitor's active story is used when it visits this place, so a scanned QR code
-// opens as a stop of the story being followed (design.txt: Stories).
+// opens as a stop of the story being followed (design.md: 3.4 Stories).
 
 import * as api from '../apiClient.js';
 import { loadSettings, saveSettings, setupPage, showError } from '../page.js';
@@ -14,7 +14,7 @@ const main = document.getElementById('main');
 const part = (name) => main.querySelector(`.lmml-${name}`);
 const params = new URLSearchParams(location.search);
 
-// The text grid (design.txt: Text grid): its three axes, each from the first value to the last.
+// The text grid (design.md: 3.1 General): its three axes, each from the first value to the last.
 const AXES = { tone: ['young', 'adult', 'scholar'], competence: ['intro', 'average', 'advanced'], length: ['brief', 'mid', 'long'] };
 const DEFAULT_CELL = { tone: 'adult', competence: 'average', length: 'brief' };
 
@@ -42,7 +42,7 @@ async function start() {
     const wanted = Number(params.get('step'));
     stop = story.chapters.flatMap((c) => c.stops)[visit.steps.includes(wanted) ? wanted : visit.steps[0]];
     if (settings.story !== story.id) {
-      // Entering a story applies its default texts and its theme (Automatic, design.txt: Stories).
+      // Entering a story applies its default texts and its theme (Automatic, design.md: 3.4 Stories).
       settings.story = story.id;
       settings.cell = { ...story.defaults };
       settings.theme = params.get('theme');
@@ -120,13 +120,13 @@ function productionsOf(place) {
 
 // All nine texts go into the page. The text section's data-tone, data-competence and data-length
 // name the one to show, and css/base.css hides the others and the passages meant for other levels
-// (design.txt: Text grid). A switch only changes those attributes.
+// (design.md: 3.1 General). A switch only changes those attributes.
 function drawText(place, settings) {
   const section = part('text');
   fill(part('versions'),
     place.texts.map((text) => {
       const version = el('article', { class: 'lmml-version', dataset: { tone: text.tone, length: text.length } });
-      version.innerHTML = text.html; // the site's own content, in the restricted HTML vocabulary (design.txt: Data)
+      version.innerHTML = text.html; // the site's own content, in the restricted HTML vocabulary (design.md: 1. Technical choices)
       return version;
     })
   );
@@ -208,7 +208,7 @@ function figure(item, number, aspect) {
     picture = el('button', { type: 'button', class: 'lmml-button', onclick: () => picture.replaceWith(youtube(item)) }, 'Play the clip');
   } else {
     picture = el('img', { src: item.src, alt: item.alt, width: item.width, height: item.height, loading: 'lazy' });
-    // A film still not found yet (design.txt: Data) shows which file belongs here.
+    // A film still not found yet (design.md: 2. Media choices) shows which file belongs here.
     picture.addEventListener('error', () => picture.replaceWith(el('p', { class: 'lmml-placeholder' }, `Film still to add: frontend/${item.src}`)), { once: true });
   }
   return el(
@@ -298,7 +298,7 @@ function drawMap(place, stop, scenes, next) {
 
 // ------------------------------------------------------------------- record
 
-// The catalogue record (design.txt: Data): the core fields every location has, then the tailored
+// The catalogue record (design.md: 1. Technical choices): the core fields every location has, then the tailored
 // blocks this place has.
 function recordRows(place) {
   const { heritage: h, architecture: a, business: b, transport: t, access: x } = place;

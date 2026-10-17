@@ -1,19 +1,22 @@
-/* SCRIPT: the screenplay theme (design.txt: Themes and the canvas)
+/* SCRIPT: the screenplay theme (design.md: 3.3 Theme 2)
 
    Inspiration  The screenplay page and the paperwork of a film shoot: 12-point Courier on US-Letter
                 paper, scene headings ("sluglines") in capitals such as EXT. RUE LEPIC – DAY, scene
                 numbers in both margins, revised pages on coloured paper, storyboards, call sheets
                 and the stripboard schedule.
-   Audience     Film fans and scholars (Bruno and Beatrix, Amélie, scene by scene).
-   Rules        - Courier Prime (a Courier drawn for screenplays) for everything, at one size;
-                  headings are capitals and underlines, never larger type.
+   Audience     Amélie, scene by scene, which shares the film's slightly quirky "movie" feel, and The
+                game is on, the Sherlock trail, since the typewritten, newspaper-like look suits a
+                detective story.
+   Rules        - Courier Prime (Alan Dague-Greene for Quote-Unquote Apps, 2013), a Courier drawn for
+                  screenplays with Courier's metrics, for everything and at one size, as on a
+                  typewritten page: headings are capitals and underlines, never larger type.
                 - Black ink on paper and one red pencil for links (7:1 on paper).
                 - The canvas is a production desk: every panel is a sheet of paper on it. A story's
                   chapters take the colours of revision pages. Pictures are storyboard frames, the
                   record is a call sheet, the route a stripboard.
-                - Text first. In landscape the script page comes first, on the left; on a screen
-                  wider than the golden ratio the storyboard and the call sheet stand beside it in two
-                  columns, on a squarer one in one. In portrait the text is the first panel.
+                - Text first, on the same golden grid as Affiche (css/base.css): the script page takes
+                  the lead panel where Affiche hangs its pictures, and a story's stripboard the one
+                  where Affiche has its map. In portrait the text is the first panel.
                 - Golden proportions, since the type keeps one size: the lead panel (the script page;
                   a story's stripboard; the list of stories) is φ times as wide as each other panel, a
                   sheet's left margin is φ times its right one, and the dialogue column is the line
@@ -155,10 +158,6 @@ a {
 
 /* ------------------------------------------ start page: title page, index cards */
 
-.lmml-home {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
-}
-
 /* The start page is a title page: the title centred halfway down the sheet. */
 .lmml-hero {
   display: flex;
@@ -185,8 +184,9 @@ a {
 
 /* ----------------------------------------------------- story page: stripboard */
 
+/* The stripboard takes the lead panel of the golden grid (css/base.css), where Affiche has its map. */
 .lmml-story {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr) minmax(0, 1fr);
+  grid-template-areas: "overview map route";
 }
 
 [data-panel="overview"] {
@@ -237,13 +237,14 @@ a {
 
 /* -------------------------------------------------- location page: text first */
 
+/* The script page takes the lead panel of the golden grid (css/base.css), where Affiche hangs its
+   pictures; the slugline heads the storyboard and the call sheet beside it. */
 .lmml-location {
-  grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-template-areas:
-    "heading pictures find"
+    "text heading heading"
     "text pictures find"
     "text pictures record"
-    "nav nav nav";
+    "text nav nav";
 }
 
 /* A story's chapters are typed on the colours of revision pages. */
@@ -342,18 +343,14 @@ a {
 
 @media (orientation: landscape) and (max-aspect-ratio: 1618/1000) {
   .lmml-story {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
     grid-template-areas: "overview route" "map route";
   }
 
   .lmml-location {
-    grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) auto;
     grid-template-areas:
-      "heading pictures"
+      "heading heading"
       "text pictures"
-      "text find"
-      "text record"
+      "find record"
       "nav nav";
   }
 }

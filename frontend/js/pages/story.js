@@ -1,4 +1,4 @@
-// The story overview (design.txt: Pages): the framing of the story, its route by chapter and a map.
+// The story overview (design.md: 3.4 Stories): the framing of the story, its route by chapter and a map.
 //   story.html?id=<story>
 // story.html holds the parts of the page; this module fills them from the API.
 
@@ -17,7 +17,7 @@ async function start() {
   const story = await api.get(`/narratives/${encodeURIComponent(params.get('id'))}`);
   const settings = loadSettings();
   if (settings.story !== story.id) {
-    // Opening a story applies its default texts and its theme (Automatic, design.txt: Stories).
+    // Opening a story applies its default texts and its theme (Automatic, design.md: 3.4 Stories).
     settings.story = story.id;
     settings.cell = { ...story.defaults };
     settings.theme = params.get('theme');

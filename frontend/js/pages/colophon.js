@@ -1,4 +1,4 @@
-// The colophon (design.txt: Pages): the course disclaimer, with the original location of every piece
+// The colophon: the course disclaimer, with the original location of every piece
 // of content. The four lists come from the database (/sources), so they always match the site.
 
 import * as api from '../apiClient.js';

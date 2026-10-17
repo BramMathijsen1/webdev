@@ -1,4 +1,4 @@
-// The start page (design.txt: Pages): the stories of each city.
+// The start page: the stories of each city.
 
 import * as api from '../apiClient.js';
 import { loadSettings, setupPage, showError } from '../page.js';

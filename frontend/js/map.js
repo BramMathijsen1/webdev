@@ -1,4 +1,4 @@
-// Leaflet helpers (design.txt: Pages). Leaflet is a classic script (frontend/vendor/leaflet/) that
+// Leaflet helpers (design.md: 1. Technical choices). Leaflet is a classic script (frontend/vendor/leaflet/) that
 // defines the global L. Pins, lines and camera wedges get .lmml-* classes, so themes can style them.
 
 const L = window.L;

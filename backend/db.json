@@ -6201,7 +6201,7 @@
       "pointOfView": "Two film fans who want to stand exactly where the camera stood",
       "audience": "Film fans recreating shots, with a camera and a costume",
       "defaults": {"tone": "adult", "competence": "advanced", "length": "brief"},
-      "theme": "script",
+      "theme": "affiche",
       "start": {
         "name": "Euston Square (Circle, Hammersmith & City and Metropolitan lines)",
         "geo": {"lat": 51.5257, "lng": -0.1357}
@@ -6473,7 +6473,7 @@
       "pointOfView": "Young detectives on Sherlock's trail",
       "audience": "Families and young Sherlock fans (about 10–15)",
       "defaults": {"tone": "young", "competence": "intro", "length": "brief"},
-      "theme": "affiche",
+      "theme": "script",
       "start": {"name": "St Paul's (Central line)", "geo": {"lat": 51.515, "lng": -0.0973}},
       "chapters": [
         {

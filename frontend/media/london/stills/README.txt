@@ -3,7 +3,7 @@ Film stills for London: one JPEG per still, named as the pages expect.
 Each still is at most 960 px wide and never cropped (the framing identifies the shot). Its caption,
 credit and source (where the frame was found) are recorded with it in backend/db.json. Stills are
 copyrighted and used for study as quotations; decide before publishing whether to commit them
-(design.txt: Data; design.txt: Risks). A file marked MISSING shows a placeholder on its page until it is added.
+(design.md: 2. Media choices). A file marked MISSING shows a placeholder on its page until it is added.
 
 sherlock-221b.jpg                  185 North Gower Street (221B) and Speedy's: Speedy's café on North Gower Street, next door to the door of 221B
 sherlock-reichenbach-fall.jpg      St Bartholomew's Hospital (Barts): Sherlock and Moriarty face each other on the roof of Barts

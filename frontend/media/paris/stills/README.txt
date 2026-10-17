@@ -3,7 +3,7 @@ Film stills for Paris: one JPEG per still, named as the pages expect.
 Each still is at most 960 px wide and never cropped (the framing identifies the shot). Its caption,
 credit and source (where the frame was found) are recorded with it in backend/db.json. Stills are
 copyrighted and used for study as quotations; decide before publishing whether to commit them
-(design.txt: Data; design.txt: Risks). A file marked MISSING shows a placeholder on its page until it is added.
+(design.md: 2. Media choices). A file marked MISSING shows a placeholder on its page until it is added.
 
 amelie-treasure-hunt.jpg           Sacré-Cœur and Square Louise-Michel: Nino follows the arrows up the square
 amelie-abbesses.jpg                Métro Abbesses: Amélie notices Nino by the photo booth

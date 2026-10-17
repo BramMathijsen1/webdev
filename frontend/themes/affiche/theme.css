@@ -1,10 +1,15 @@
-/* AFFICHE: the travel-poster theme (design.txt: Themes and the canvas)
+/* AFFICHE: the travel-poster theme (design.md: 3.2 Theme 1)
 
    Inspiration  French and British travel posters of the 1920s and 30s: A. M. Cassandre's railway
                 posters and the London Underground posters. A poster sells a place at a glance:
                 one strong picture, a short title in Art Deco letters, flat colours.
-   Audience     Discovery: school groups and young visitors (Alice's class, the Sherlock trail).
-   Rules        - Limelight (Art Deco) for titles only; Jost (a geometric sans of 1927) for reading.
+   Audience     The general theme, which fits any film or series, now or added later: the stories that
+                combine several productions, Two Parisiennes (Alice's class: Amélie and Emily in
+                Paris) and Shot for shot (Bruno and Beatrix: Love Actually and Sherlock).
+   Rules        - Limelight (Nicole Fally, Sorkin Type, 2011), an Art Deco display face, for titles
+                  only: its high contrast needs large sizes. Jost (Owen Earl, indestructible type*), a
+                  geometric sans after the German sans-serifs of the 1920s such as Futura (1927), for
+                  reading. A poster's hierarchy: one face to catch the eye, one to read.
                 - Flat inks on cream paper, one palette per city: Paris navy, vermilion and ochre;
                   London Underground blue and red. Every text colour meets WCAG AA.
                 - The canvas is a poster wall: each panel is a block of cream or of ink.
@@ -12,9 +17,9 @@
                   bottom, like the picture of a poster; on a screen wider than the golden ratio the
                   text, the map and the record stand in two columns beside them, on a squarer one the
                   panels share two columns. In portrait the pictures are the first panel.
-                - Golden proportions: the lead panel (the pictures; the map of a story; the list of
-                  stories) is φ times as wide as each other panel, and a squarer screen's upper row
-                  φ times as high as the lower. Titles grow between steps of the golden type scale.
+                - Golden proportions: the shared grid of css/base.css, with the pictures, a story's
+                  map and the list of stories in the lead panels (φ times as wide as each other
+                  panel). Titles grow between steps of the golden type scale.
                 - Wayfinding as on the railways: the route is a line with stations, the next stop a
                   departure board, the record a timetable.
                 - Square corners. Print: A4.
@@ -184,10 +189,6 @@ h3 {
 
 /* ------------------------------------------------- start page: poster cards */
 
-.lmml-home {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
-}
-
 /* The title is a poster of its own, under a sunburst. */
 .lmml-hero {
   display: flex;
@@ -237,10 +238,6 @@ h3 {
 }
 
 /* ------------------------------------------ story page: a line with stations */
-
-.lmml-story {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.618fr);
-}
 
 [data-panel="overview"] {
   border-top: 10px solid var(--ink);
@@ -303,14 +300,7 @@ h3 {
 
 /* ----------------------------------------------- location page: visual first */
 
-.lmml-location {
-  grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr) minmax(0, 1fr);
-  grid-template-areas:
-    "pictures heading heading"
-    "pictures text find"
-    "pictures text record"
-    "pictures nav nav";
-}
+/* The layout is the default of the golden grid (css/base.css): the pictures in the lead panel. */
 
 .lmml-productions {
   font-size: 0.8rem;
@@ -391,24 +381,7 @@ h3 {
   font-weight: 500;
 }
 
-/* ----------------------------- screens squarer than the golden ratio, and portrait */
-
-@media (orientation: landscape) and (max-aspect-ratio: 1618/1000) {
-  .lmml-story {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
-    grid-template-areas: "overview map" "route map";
-  }
-
-  .lmml-location {
-    grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1.618fr) minmax(0, 1fr) auto;
-    grid-template-areas:
-      "heading heading"
-      "pictures text"
-      "find record"
-      "nav nav";
-  }
-}
+/* ------------------------------------------------------------------ portrait */
 
 /* In a row of panels (css/base.css) the pictures come first. */
 @media (orientation: portrait), (orientation: landscape) and (max-height: 32rem) {

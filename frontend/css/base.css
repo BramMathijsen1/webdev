@@ -1,4 +1,4 @@
-/* LMML base stylesheet (design.txt: Themes and the canvas): the canvas, the proportions, the HTML
+/* LMML base stylesheet (design.md: 3.1 General): the canvas, the proportions, the HTML
    vocabulary, plain defaults and accessibility. The active theme (themes/<id>/theme.css, loaded after
    this file) restyles it all through the variables below, the elements of the vocabulary and the
    .lmml-* hooks.
@@ -6,8 +6,9 @@
    THE CANVAS
    Every page is exactly as big as the viewport: the header, the canvas and the footer fill it,
    and nothing scrolls but the panels inside the canvas, each in its own container.
-   - Landscape: the panels stand side by side, in a grid that each theme sets, also by aspect
-     ratio (wider than the golden ratio, or squarer).
+   - Landscape: the panels stand side by side in the golden grid below, the same in every theme,
+     with a variant for screens squarer than the golden ratio. A theme decides which part goes
+     in which panel.
    - Portrait: the panels stand in a row that shows one at a time; swipe, or use the tabs
      (.lmml-tabs), to move between them.
 
@@ -17,7 +18,7 @@
    - The type scale: each step is φ times the one below (--step-0 to --step-3: 17, 27.5, 44.5 and
      72 px). A title grows with the screen between two neighbouring steps. The line height is φ.
 
-   HTML VOCABULARY (design.txt: Data): the only elements the pages and the texts use
+   HTML VOCABULARY (design.md: 1. Technical choices): the only elements the pages and the texts use
    Structure  header nav main section article div footer h1 h2 h3 p ul ol li dl dt dd
               table caption tbody tr th td figure figcaption img iframe details summary
    Inline     a em strong q cite span
@@ -306,15 +307,18 @@ html:not([data-theme]) body {
   display: none;
 }
 
-/* The default layouts in landscape; each theme sets its own (design.txt: Themes and the canvas).
-   The lead panel is φ times as wide as each of the others. */
+/* The golden grid in landscape (design.md: 3.1 General). Every theme uses it, so the
+   panels have the same proportions in every theme: the lead panel is φ times as wide as each of
+   the others, and on a screen squarer than φ the upper row is φ times as high as the lower. A theme
+   only decides which part goes in which panel (grid-template-areas). These areas, with the pictures
+   and the map in the lead panels (visual first), are the default. */
 .lmml-home {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
   grid-template-areas: "intro stories";
 }
 
 .lmml-story {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.618fr);
   grid-template-areas: "overview route map";
 }
 
@@ -322,10 +326,28 @@ html:not([data-theme]) body {
   grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr) auto;
   grid-template-areas:
-    "heading heading heading"
-    "text pictures find"
-    "text pictures record"
-    "nav nav nav";
+    "pictures heading heading"
+    "pictures text find"
+    "pictures text record"
+    "pictures nav nav";
+}
+
+@media (orientation: landscape) and (max-aspect-ratio: 1618/1000) {
+  .lmml-story {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
+    grid-template-rows: minmax(0, 1.618fr) minmax(0, 1fr);
+    grid-template-areas: "overview map" "route map";
+  }
+
+  .lmml-location {
+    grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1.618fr) minmax(0, 1fr) auto;
+    grid-template-areas:
+      "heading heading"
+      "pictures text"
+      "find record"
+      "nav nav";
+  }
 }
 
 .lmml-qr,
@@ -614,7 +636,7 @@ html:not([data-theme]) body {
   margin-bottom: 1.5rem;
 }
 
-/* The text grid (design.txt: Text grid). The text section names the text to show in data-tone,
+/* The text grid (design.md: 3.1 General). The text section names the text to show in data-tone,
    data-competence and data-length; every other version, and every passage marked for another
    competence level (data-level), is hidden. The young tone adds the games, the scholar tone the
    references. */

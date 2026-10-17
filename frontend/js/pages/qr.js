@@ -1,4 +1,4 @@
-// QR codes (design.txt: Pages): one printable card per location of a city. Each code opens the
+// QR codes (design.md: 3.4 Stories): one printable card per location of a city. Each code opens the
 // location's page on the public site; that page then follows the visitor's story.
 //   qr.html?region=<id>
 // The codes are drawn by the vendored qrcode-generator (the global `qrcode`).

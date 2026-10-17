@@ -22,14 +22,14 @@ Then open http://localhost:8000/. A local server is needed, because ES modules a
   - *Amélie, scene by scene*.
   - *Shot for shot*: recreating London shots.
   - *The game is on*: a Sherlock trail for young detectives.
-- **2 themes**: *Affiche* (1920s–30s travel posters) and *Script* (screenplays and production paperwork). Both are CSS-only and can be replaced; see `design.txt: Themes and the canvas`.
+- **2 themes**: *Affiche* (1920s–30s travel posters) and *Script* (screenplays and production paperwork). Both are CSS-only and can be replaced; see `design.md`, chapter 3.
 - **A canvas the size of the screen**: every page fits the viewport, and its texts, pictures, map and record scroll in their own panels. They stand side by side in landscape; in portrait they show one at a time, with tabs.
 - **Pages**: start page, story overview, location or story stop, printable QR codes, about, and the colophon (the course disclaimer, with every source of the content).
 - **Languages**: the texts are in English; the language menu at the top right translates a page into French, Dutch, German, Spanish or Italian.
 
 ## Film stills
 
-`frontend/media/<region>/stills/` holds 28 film stills, at most 960 px wide and uncropped, each credited to its rights holder and recorded in `backend/db.json` with the page it was found on. One Sherlock still (Chinatown) is still missing and shows a placeholder; the README.txt in each stills folder lists them. Stills are copyrighted and GitHub Pages sites are public, so decide before publishing whether to commit them (`design.txt: Risks`).
+`frontend/media/<region>/stills/` holds 28 film stills, at most 960 px wide and uncropped, each credited to its rights holder and recorded in `backend/db.json` with the page it was found on. One Sherlock still (Chinatown) is still missing and shows a placeholder; the README.txt in each stills folder lists them. Stills are copyrighted and GitHub Pages sites are public, so decide before publishing whether to commit them (`design.md`, chapter 2).
 
 ## Credits
 
@@ -43,4 +43,4 @@ Then open http://localhost:8000/. A local server is needed, because ES modules a
 
 ## Design
 
-`design.txt` holds the key design decisions, each with its reason, in a few short sections.
+`design.md` is the design document: the technical, media and design choices, with their reasons.
