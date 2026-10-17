@@ -66,9 +66,13 @@ THEMES AND THE CANVAS
   number in both margins, chapters on revision-page colours, storyboard frames and a call sheet; it prints on
   US Letter.
 - The canvas is exactly the size of the viewport, and only the panels scroll, each in its own container. In
-  landscape the panels stand side by side: three columns on screens wider than 3:2, two on squarer ones, arranged
-  by each theme. In portrait they stand in a row, one at a time, with tabs; a phone on its side shows two. On paper
-  the canvas flows onto pages.
+  landscape the panels stand side by side: three columns on screens wider than the golden ratio (1.618 : 1), two
+  on squarer ones, arranged by each theme. In portrait they stand in a row, one at a time, with tabs; a phone on its
+  side shows two. On paper the canvas flows onto pages.
+- Proportions follow the golden ratio φ ≈ 1.618, one rule for the whole site: in every grid the lead panel is φ
+  times as wide as each other panel; titles grow between steps of a golden type scale (17, 27.5, 44.5 and 72 px,
+  each φ times the one before); the line height is φ. Script keeps one type size, so there φ also sets the left
+  margin (φ times the right one) and the dialogue column (the line length divided by φ).
 - The page stays hidden until its theme has loaded, so it never flashes in the wrong one.
 
 

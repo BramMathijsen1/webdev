@@ -12,8 +12,12 @@
                   chapters take the colours of revision pages. Pictures are storyboard frames, the
                   record is a call sheet, the route a stripboard.
                 - Text first. In landscape the script page comes first, on the left; on a screen
-                  wider than 3:2 the storyboard and the call sheet stand beside it in two columns, on
-                  a squarer one in one. In portrait the text is the first panel.
+                  wider than the golden ratio the storyboard and the call sheet stand beside it in two
+                  columns, on a squarer one in one. In portrait the text is the first panel.
+                - Golden proportions, since the type keeps one size: the lead panel (the script page;
+                  a story's stripboard; the list of stories) is φ times as wide as each other panel, a
+                  sheet's left margin is φ times its right one, and the dialogue column is the line
+                  length divided by φ.
                 - Print: US-Letter with a 1.5-inch binding margin.
 */
 
@@ -37,7 +41,7 @@
 
   --font-body: "Courier Prime", "Courier New", monospace;
   --font-display: var(--font-body);
-  --size-title: 1.0625rem;
+  --size-title: var(--step-0);
   --color-bg: #e4e1d6; /* the desk */
   --color-panel: var(--paper);
   --color-text: var(--ink);
@@ -55,7 +59,7 @@ h3,
 .lmml-heading h1,
 .lmml-card h3,
 .lmml-qr-card h2 {
-  font-size: 1.0625rem;
+  font-size: var(--step-0);
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -98,13 +102,13 @@ a {
 /* Every panel is a sheet of paper on the desk, with a wide left margin as on a script page. */
 .lmml-panel,
 .lmml-heading {
-  padding-left: calc(var(--pad) * 1.6);
+  padding-left: calc(var(--pad) * var(--phi));
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 /* The heading's left margin holds the stop number of the slugline. */
 .lmml-heading {
-  padding: var(--pad) var(--pad) 0.5rem max(2.75em, calc(var(--pad) * 1.6));
+  padding: var(--pad) var(--pad) 0.5rem max(2.75em, calc(var(--pad) * var(--phi)));
   background: var(--paper);
 }
 
@@ -120,7 +124,7 @@ a {
 }
 
 .lmml-lead {
-  font-size: 1.0625rem;
+  font-size: var(--step-0);
 }
 
 /* Buttons are typewriter keys. */
@@ -152,7 +156,7 @@ a {
 /* ------------------------------------------ start page: title page, index cards */
 
 .lmml-home {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
 }
 
 /* The start page is a title page: the title centred halfway down the sheet. */
@@ -182,7 +186,7 @@ a {
 /* ----------------------------------------------------- story page: stripboard */
 
 .lmml-story {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr) minmax(0, 1fr);
 }
 
 [data-panel="overview"] {
@@ -234,7 +238,7 @@ a {
 /* -------------------------------------------------- location page: text first */
 
 .lmml-location {
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.85fr) minmax(0, 0.95fr);
+  grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-template-areas:
     "heading pictures find"
     "text pictures find"
@@ -289,9 +293,10 @@ a {
   border-bottom: 1px solid var(--ink);
 }
 
-/* The narration is set as dialogue: a narrow centred column under the story's name. */
+/* The narration is set as dialogue: a centred column under the story's name, as wide as the line
+   length divided by φ (in screenplays, too, dialogue is about 35 characters to the action's 60). */
 .lmml-narration {
-  max-width: 36ch;
+  max-width: calc(var(--measure) / var(--phi));
   margin-left: auto;
   margin-right: auto;
 }
@@ -324,7 +329,7 @@ a {
 }
 
 .lmml-next-name {
-  font-size: 1.0625rem;
+  font-size: var(--step-0);
 }
 
 .lmml-nav {
@@ -335,14 +340,14 @@ a {
 
 /* -------------------------------------------- squarer screens, and portrait */
 
-@media (orientation: landscape) and (max-aspect-ratio: 3/2) {
+@media (orientation: landscape) and (max-aspect-ratio: 1618/1000) {
   .lmml-story {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
     grid-template-areas: "overview route" "map route";
   }
 
   .lmml-location {
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr);
     grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) auto;
     grid-template-areas:
       "heading pictures"

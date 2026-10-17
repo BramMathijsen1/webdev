@@ -1,14 +1,21 @@
-/* LMML base stylesheet (design.txt: Themes and the canvas): the canvas, the HTML vocabulary, plain defaults and
-   accessibility. The active theme (themes/<id>/theme.css, loaded after this file) restyles it all
-   through the variables below, the elements of the vocabulary and the .lmml-* hooks.
+/* LMML base stylesheet (design.txt: Themes and the canvas): the canvas, the proportions, the HTML
+   vocabulary, plain defaults and accessibility. The active theme (themes/<id>/theme.css, loaded after
+   this file) restyles it all through the variables below, the elements of the vocabulary and the
+   .lmml-* hooks.
 
    THE CANVAS
    Every page is exactly as big as the viewport: the header, the canvas and the footer fill it,
    and nothing scrolls but the panels inside the canvas, each in its own container.
    - Landscape: the panels stand side by side, in a grid that each theme sets, also by aspect
-     ratio (wider than 3:2, or squarer).
+     ratio (wider than the golden ratio, or squarer).
    - Portrait: the panels stand in a row that shows one at a time; swipe, or use the tabs
      (.lmml-tabs), to move between them.
+
+   PROPORTIONS: the golden ratio φ ≈ 1.618
+   - In each grid the lead panel is φ times as wide (or as high) as each of the others.
+   - Three columns only on a screen wider than φ : 1; a squarer screen gets two.
+   - The type scale: each step is φ times the one below (--step-0 to --step-3: 17, 27.5, 44.5 and
+     72 px). A title grows with the screen between two neighbouring steps. The line height is φ.
 
    HTML VOCABULARY (design.txt: Data): the only elements the pages and the texts use
    Structure  header nav main section article div footer h1 h2 h3 p ul ol li dl dt dd
@@ -44,7 +51,13 @@
 :root {
   --font-body: system-ui, sans-serif;
   --font-display: var(--font-body);
-  --size-title: clamp(1.75rem, 3.2vw + 0.8rem, 2.75rem);
+  /* The golden ratio, and the type scale built on it: each step is φ times the one below. */
+  --phi: 1.618;
+  --step-0: 1.0625rem; /* reading text, 17 px */
+  --step-1: calc(var(--step-0) * var(--phi)); /* 27.5 px */
+  --step-2: calc(var(--step-1) * var(--phi)); /* 44.5 px */
+  --step-3: calc(var(--step-2) * var(--phi)); /* 72 px */
+  --size-title: clamp(var(--step-1), 3vw, var(--step-2));
   --color-bg: #ececec;
   --color-panel: #ffffff;
   --color-text: #1b1b1b;
@@ -74,8 +87,8 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: 1.0625rem;
-  line-height: 1.6;
+  font-size: var(--step-0);
+  line-height: var(--phi);
 }
 
 h1,
@@ -293,19 +306,20 @@ html:not([data-theme]) body {
   display: none;
 }
 
-/* The default layouts in landscape; each theme sets its own (design.txt: Themes and the canvas). */
+/* The default layouts in landscape; each theme sets its own (design.txt: Themes and the canvas).
+   The lead panel is φ times as wide as each of the others. */
 .lmml-home {
-  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
   grid-template-areas: "intro stories";
 }
 
 .lmml-story {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr) minmax(0, 1fr);
   grid-template-areas: "overview route map";
 }
 
 .lmml-location {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr) auto;
   grid-template-areas:
     "heading heading heading"
@@ -434,7 +448,7 @@ html:not([data-theme]) body {
   }
 
   .lmml-heading h1 {
-    font-size: 1.25rem;
+    font-size: var(--step-1);
   }
 
   .lmml-heading .lmml-kicker,
@@ -512,7 +526,7 @@ html:not([data-theme]) body {
 
 .lmml-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   gap: var(--gap);
 }
 
@@ -523,7 +537,7 @@ html:not([data-theme]) body {
 
 .lmml-card h3 {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: var(--step-1);
 }
 
 .lmml-card-meta {
@@ -575,10 +589,6 @@ html:not([data-theme]) body {
 
 .lmml-heading > * {
   margin-bottom: 0.25rem;
-}
-
-.lmml-heading h1 {
-  font-size: clamp(1.5rem, 2.4vw + 0.6rem, 2.4rem);
 }
 
 .lmml-slug {
