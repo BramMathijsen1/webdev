@@ -2,9 +2,9 @@
 
 LMML is a companion web app for walking tours of film and TV locations in Paris and London. Pick a city and a story, and LMML guides you from one location to the next. At each stop it shows where the camera stood, gives directions on a live map, and tells you about the place at the length, level and tone you choose.
 
-It's a course project and a static site: plain HTML, CSS and JavaScript, with no build step, no npm and no server code. The "backend" is a JSON database (`backend/db.json`) plus an API handler (`backend/api.js`) that runs in the browser.
+The website is published on github pages.
 
-## Run it
+## If you want to run it locally
 
 From the repository root:
 
@@ -14,7 +14,7 @@ python -m http.server 8000
 
 Then open http://localhost:8000/. A local server is needed, because ES modules and `fetch()` don't work from `file://`.
 
-## What's inside
+## Contents
 
 - **32 locations**: 17 in Paris (*Amélie*, *Emily in Paris*, and monuments) and 15 in London (*Love Actually*, *Sherlock*). Each has camera positions, credited pictures, sourced facts, references and nine texts; 13 scenes have an official video clip.
 - **4 stories**:
@@ -26,10 +26,6 @@ Then open http://localhost:8000/. A local server is needed, because ES modules a
 - **A canvas the size of the screen**: every page fits the viewport, and its texts, pictures, map and record scroll in their own panels. They stand side by side in landscape; in portrait they show one at a time, with tabs.
 - **Pages**: start page, story overview, location or story stop, printable QR codes, about, and the colophon (the course disclaimer, with every source of the content).
 - **Languages**: the texts are in English; the language menu at the top right translates a page into French, Dutch, German, Spanish or Italian.
-
-## Film stills
-
-`frontend/media/<region>/stills/` holds 28 film stills, at most 960 px wide and uncropped, each credited to its rights holder and recorded in `backend/db.json` with the page it was found on. One Sherlock still (Chinatown) is still missing and shows a placeholder; the README.txt in each stills folder lists them. Stills are copyrighted and GitHub Pages sites are public, so decide before publishing whether to commit them (`design.md`, chapter 2).
 
 ## Credits
 
