@@ -24,7 +24,7 @@ The videos are clips from YouTube, to bring the experience more to life. Only cl
 
 ## 3. Design choices
 
-The web application has different general design choices and two themes.
+The web application has different general design choices and two themes. The pictures in 3.2 and 3.3 are real publications that the typography of the themes is based on. They come from Wikimedia Commons, so are free to use.
 
 ### 3.1 General
 
@@ -32,18 +32,40 @@ For the general design the golden ratio (about 1.618) has been used on every pag
 
 Every page is exactly as big as the screen. Only the panels scroll, each on its own. On a portrait screen, such as a phone, the panels are shown one at a time, with tabs to switch between them.
 
-Every location has nine texts: a short, a medium and a long text for each of the three audiences, and every text has three levels of difficulty. The visitor changes the text with six buttons, such as “Tell me more” and “This text is too difficult”. All the texts are already in the page, so a button only changes which one is shown.
+Every location has nine texts: a short, a medium and a long text for each of the three audiences, and every text has three levels of difficulty. The visitor changes the text with six buttons, such as “Tell me more” and “This text is too difficult”. All the texts are already in the page, so a button only changes which one is shown. Every location also has a button with "navigate" that opens the google maps app for mobile users.
 
 ### 3.2 Theme 1: Affiche
 
-For theme one a general and classic theme called “Affiche” was chosen, after the travel posters of the 1920s–30s (Cassandre, the London Underground). This was done so the current movies, and most importantly movies added in the future, have a theme that fits in the general sense. That is why Affiche is the default theme for the two stories that combine several productions, Two Parisiennes and Shot for shot. The pictures lead, with flat colours per city, the route as a railway line and the record as a timetable. The fonts used were:
+For theme one a general and very classic theme called “Affiche” was chosen, after the travel posters of the 1920s–30s (Cassandre, the London Underground). This was done so the current movies, and most importantly movies added in the future, have a theme that fits in the general sense. That is why Affiche is the default theme for the two stories that combine several productions, Two Parisiennes and Shot for shot. The pictures lead, with flat colours per city, the route as a railway line and the record as a timetable. The fonts used were:
 
 1. Limelight (titles): an Art Deco display face from 2011, in the lettering style of 1920s–30s travel posters. Its hairline-thin strokes disappear at small sizes, so it appears only in titles.
 2. Jost (normal text): a geometric sans inspired by the German sans-serifs of the 1920s, such as Futura (1927). It's the reading face of the poster era and stays clear on a phone outdoors.
 
+<p>
+<img src="docs/typography/broders-avignon.jpg" width="162" alt="Travel poster of Avignon, with AVIGNON in large capitals at the foot and PARIS - LYON - MÉDITERRANÉE in small capitals at the top, in navy, ochre and vermilion">
+<img src="docs/typography/taylor-brightest-london.jpg" width="139" alt="London Underground poster, with BRIGHTEST LONDON IS BEST REACHED BY in blue capitals above the red UNDERGROUND sign">
+<img src="docs/typography/broadway-specimen.jpg" width="178" alt="Specimen of Broadway: heavy Art Deco capitals with hairline-thin strokes">
+<img src="docs/typography/futura-specimen.jpg" width="316" alt="Specimen of Futura: the alphabet in several sizes, built from circles and straight lines">
+</p>
+
+*From left to right: travel posters by Roger Broders (Avignon, for the PLM railway, 1922) and Horace Taylor (Brightest London, for the London Underground, 1924), and specimens of Broadway (late 1920s) and Futura (1927). The posters show the large titles, the small capitals and the city colours of Affiche; Broadway shows the Art Deco letters that Limelight follows, and Futura the sans-serif that Jost follows.*
+
+*Sources, all on Wikimedia Commons (resized): [Broders](https://commons.wikimedia.org/wiki/File:Roger_Broders_Avignon_Le_palais_des_papes_1922.jpg) and [Taylor](https://commons.wikimedia.org/wiki/File:Brightest_London_is_best_reached_by_Underground,_subway_poster,_1924.jpg), public domain; [Broadway](https://commons.wikimedia.org/wiki/File:Broadway_Series.jpg) and [Futura](https://commons.wikimedia.org/wiki/File:Futura_Light_Italic_%287242027916%29.jpg), photos by James Puckett, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0).*
+
 ### 3.3 Theme 2: Script
 
-The second theme is called “Script”, after the screenplay page and the paperwork of a film shoot. This theme is used for the story Amélie, scene by scene. It has the slightly quirky and unserious “movie” feel that Amélie has. The theme can also be used for a detective movie, because it has a “newspaper-esque” feel. That's why the theme is also the default theme for the Sherlock story, The game is on. Each stop opens with a scene heading, like EXT. RUE LEPIC – DAY, the pictures are storyboard frames and the route is a stripboard. The font used is Courier Prime: a version of Courier drawn for screenplays in 2013, because scripts are traditionally typed in 12-point Courier. It keeps Courier's letter widths but adds real italics and a stronger bold, at a single size like a typewriter.
+The second theme is called “Script”, after the screenplay page and the paperwork of a film shoot. This theme is used for the story Amélie, scene by scene. It has the slightly quirky and unserious “movie” feel that Amélie has. The theme can also be used for a detective movie, because it has a “newspaper-esque” feel. That's why the theme is also the default theme for the Sherlock story, The game is on. Each stop opens with a scene heading, like EXT. RUE LEPIC – DAY, the pictures are storyboard frames and the route is a stripboard. In the different "chapers" for the story, the header is a different colour, so the chapters are clearly visually recognizable. The font used is Courier Prime: a version of Courier drawn for screenplays in 2013, because scripts are traditionally typed in 12-point Courier. It keeps Courier's letter widths but adds real italics and a stronger bold, at a single size like a typewriter.
+
+<p>
+<img src="docs/typography/last-screenwriter-page.jpg" width="193" alt="A screenplay page in Courier, with scene headings such as INT. GRAND AUDITORIUM - NIGHT, the scene number in both margins, and dialogue in a narrow column">
+<img src="docs/typography/storyboard-ryzom.jpg" width="175" alt="A storyboard sheet of numbered, drawn frames with notes beside each frame">
+<img src="docs/typography/navy-schedule.jpg" width="194" alt="A typewritten shooting schedule with one ruled row per set, the actors and the vehicles">
+<img src="docs/typography/blue-book-report.jpg" width="204" alt="A typewritten Air Intelligence Information Report of 1952 with a typed police report">
+</p>
+
+*Left to right: a page of the screenplay of The Last Screenwriter (2024), a storyboard for the game Ryzom, the schedule of one shooting day of The Navy Dental Corps (US Navy, 1959) and a typed police report in a case file of Project Blue Book (US Air Force, 1952). The screenplay is set in Courier at one size, and every scene heading is in capitals with its number in both margins, like the stops in Script. The numbered frames of the storyboard are the model for the pictures, the rows of the schedule for the stripboard, and the typed report for the detective feel.*
+
+*Sources, all on Wikimedia Commons (resized): the [screenplay](https://commons.wikimedia.org/w/index.php?title=File:The_Last_Screenwriter_-_Screenplay.pdf&page=3), the [schedule](https://commons.wikimedia.org/w/index.php?title=File:%27The_Navy_Dental_Corps%27_Screenplay_Shooting_Script_%28IA_NavyDentalCorpsScreenplayShootingScript%29.pdf&page=45) and the [report](https://commons.wikimedia.org/w/index.php?title=File:Project_Blue_Book_report_-_1952-09-6384162-Kent-England.pdf&page=2), public domain; the [storyboard](https://commons.wikimedia.org/wiki/File:Ryzom_storyboard_1.jpg) by Ryzom, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0).*
 
 ### 3.4 Stories
 

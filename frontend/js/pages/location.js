@@ -108,6 +108,8 @@ function render(place, story, stop, settings) {
   if (stop) {
     fill(part('nav'), navLinks(story, stops[stop.step - 1], next));
     part('nav').hidden = false;
+    part('navigate').href = navigateHref(place, stop);
+    part('navigate').hidden = false;
   }
   drawMap(place, stop, scenes, next);
 }
@@ -294,6 +296,13 @@ function drawMap(place, stop, scenes, next) {
   };
   button.addEventListener('click', track);
   positionAllowed().then((allowed) => allowed && track());
+}
+
+// The route in Google Maps from where the visitor is to this stop: on foot, or by public transport
+// when the story goes there by metro, tube, bus or train.
+function navigateHref(place, stop) {
+  const travelmode = stop.directions.mode === 'walk' ? 'walking' : 'transit';
+  return `https://www.google.com/maps/dir/?api=1&destination=${place.geo.lat},${place.geo.lng}&travelmode=${travelmode}&dir_action=navigate`;
 }
 
 // ------------------------------------------------------------------- record

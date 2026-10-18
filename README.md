@@ -39,4 +39,4 @@ Then open http://localhost:8000/. A local server is needed, because ES modules a
 
 ## Design
 
-`design.md` is the design document: the technical, media and design choices, with their reasons.
+`design.md` is the design document: the technical, media and design choices, with their reasons, and pictures of the real publications behind the typography of the two themes. The pictures are in `docs/typography/`, credited in design.md.
