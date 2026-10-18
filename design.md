@@ -24,7 +24,7 @@ The videos are clips from YouTube, to bring the experience more to life. Only cl
 
 ## 3. Design choices
 
-The web application has different general design choices and two themes. The pictures in 3.2 and 3.3 are real publications that the typography of the themes is based on. They come from Wikimedia Commons, so are free to use.
+The web application has different general design choices and two themes. The pictures in 3.2 and 3.3 are real examples that the typography of the themes is based on. Most of them come from Wikimedia Commons and are free to use; the others are still under copyright and are credited under the pictures.
 
 ### 3.1 General
 
@@ -36,7 +36,7 @@ Every location has nine texts: a short, a medium and a long text for each of the
 
 ### 3.2 Theme 1: Affiche
 
-For theme one a general and very classic theme called “Affiche” was chosen, after the travel posters of the 1920s–30s (Cassandre, the London Underground). This was done so the current movies, and most importantly movies added in the future, have a theme that fits in the general sense. That is why Affiche is the default theme for the two stories that combine several productions, Two Parisiennes and Shot for shot. The pictures lead, with flat colours per city, the route as a railway line and the record as a timetable. The fonts used were:
+For theme one a general and very classic theme called “Affiche” was chosen, after the travel posters of the 1920s–30s (Cassandre, the London Underground). This was done so the current movies, and most importantly movies added in the future, have a theme that fits in the general sense. That is why Affiche is the default theme for the two stories that combine several productions, Two Parisiennes and Shot for shot. The pictures lead, with flat colours per city, the route as a railway line and the record as a timetable. Next to the 1930s London Underground, Affiche also has the vibe of a classic movie theatre, with Art Deco film posters and the names of the cinemas in lit letters. The fonts used were:
 
 1. Limelight (titles): an Art Deco display face from 2011, in the lettering style of 1920s–30s travel posters. Its hairline-thin strokes disappear at small sizes, so it appears only in titles.
 2. Jost (normal text): a geometric sans inspired by the German sans-serifs of the 1920s, such as Futura (1927). It's the reading face of the poster era and stays clear on a phone outdoors.
@@ -52,6 +52,18 @@ For theme one a general and very classic theme called “Affiche” was chosen, 
 
 *Sources, all on Wikimedia Commons (resized): [Broders](https://commons.wikimedia.org/wiki/File:Roger_Broders_Avignon_Le_palais_des_papes_1922.jpg) and [Taylor](https://commons.wikimedia.org/wiki/File:Brightest_London_is_best_reached_by_Underground,_subway_poster,_1924.jpg), public domain; [Broadway](https://commons.wikimedia.org/wiki/File:Broadway_Series.jpg) and [Futura](https://commons.wikimedia.org/wiki/File:Futura_Light_Italic_%287242027916%29.jpg), photos by James Puckett, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0).*
 
+<p>
+<img src="docs/typography/lloyd-underground-1910.jpg" width="116" alt="Underground poster of 1910: a family looks at posters on a station wall under the UNDERGROUND sign, with TOO MUCH OF A GOOD THING and EVERY VARIETY OF PLEASURE RESORT in capitals">
+<img src="docs/typography/metropolis-poster.jpg" width="85" alt="Poster for the film Metropolis: METROPOLIS in angular Art Deco letters above a city of towers and the face of the robot Maria">
+<img src="docs/typography/tivoli-downers-grove.jpg" width="128" alt="The Tivoli cinema at dusk, with TIVOLI in lit letters above its lit marquee">
+<img src="docs/typography/grand-rex-paris.jpg" width="254" alt="Le Grand Rex in Paris at night: an Art Deco tower with REX in lit letters">
+<img src="docs/typography/gaumont-state-kilburn.jpg" width="227" alt="The auditorium of the Gaumont State cinema in Kilburn, London, with its decorated ceiling and screen">
+</p>
+
+*Left to right: John Henry Lloyd's poster for the Underground (1910), Heinz Schulz-Neudamm's poster for Metropolis (1927), the Tivoli in Downers Grove, Illinois (1928), Le Grand Rex in Paris (1932) and the Gaumont State in Kilburn, London (1937). Next to the Underground, these give the vibe of the classic movie theatre: film titles in Art Deco capitals, like Limelight, and the names of the cinemas in lit letters.*
+
+*Credits (resized): Lloyd's poster, © TfL, from the [London Transport Museum collection](https://www.ltmuseum.co.uk/collections/collections-online/posters/item/2000-9389); the Metropolis poster by Heinz Schulz-Neudamm, still under copyright ([record](https://peoplesgdarchive.org/item/16746/metropolis)); on Wikimedia Commons, the [Tivoli](https://commons.wikimedia.org/wiki/File:Tivoli_Theatre,_Downers_Grove_Main_Street.jpg) by AEDIAEDI and [Le Grand Rex](https://commons.wikimedia.org/wiki/File:GrandRexFacade90ans.jpg) by Thomas Laconis, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), and the [Gaumont State](https://commons.wikimedia.org/wiki/File:Gaumont_State_Cinema_Kilburn_2013-09-21_12.05.52_%28by_Nathan%29.jpg) by Nathan, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0).*
+
 ### 3.3 Theme 2: Script
 
 The second theme is called “Script”, after the screenplay page and the paperwork of a film shoot. This theme is used for the story Amélie, scene by scene. It has the slightly quirky and unserious “movie” feel that Amélie has. The theme can also be used for a detective movie, because it has a “newspaper-esque” feel. That's why the theme is also the default theme for the Sherlock story, The game is on. Each stop opens with a scene heading, like EXT. RUE LEPIC – DAY, the pictures are storyboard frames and the route is a stripboard. In the different "chapers" for the story, the header is a different colour, so the chapters are clearly visually recognizable. The font used is Courier Prime: a version of Courier drawn for screenplays in 2013, because scripts are traditionally typed in 12-point Courier. It keeps Courier's letter widths but adds real italics and a stronger bold, at a single size like a typewriter.
@@ -66,6 +78,16 @@ The second theme is called “Script”, after the screenplay page and the paper
 *Left to right: a page of the screenplay of The Last Screenwriter (2024), a storyboard for the game Ryzom, the schedule of one shooting day of The Navy Dental Corps (US Navy, 1959) and a typed police report in a case file of Project Blue Book (US Air Force, 1952). The screenplay is set in Courier at one size, and every scene heading is in capitals with its number in both margins, like the stops in Script. The numbered frames of the storyboard are the model for the pictures, the rows of the schedule for the stripboard, and the typed report for the detective feel.*
 
 *Sources, all on Wikimedia Commons (resized): the [screenplay](https://commons.wikimedia.org/w/index.php?title=File:The_Last_Screenwriter_-_Screenplay.pdf&page=3), the [schedule](https://commons.wikimedia.org/w/index.php?title=File:%27The_Navy_Dental_Corps%27_Screenplay_Shooting_Script_%28IA_NavyDentalCorpsScreenplayShootingScript%29.pdf&page=45) and the [report](https://commons.wikimedia.org/w/index.php?title=File:Project_Blue_Book_report_-_1952-09-6384162-Kent-England.pdf&page=2), public domain; the [storyboard](https://commons.wikimedia.org/wiki/File:Ryzom_storyboard_1.jpg) by Ryzom, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0).*
+
+<p>
+<img src="docs/typography/jaws-death-report.jpg" width="140" alt="A death report form in a typewriter, typed in capitals: CHRISSIE WATKINS, VINEYARD WOODS, hair BRN, eyes BRN">
+<img src="docs/typography/ibm-wheelwriter.jpg" width="280" alt="An IBM Wheelwriter electronic typewriter seen from the front">
+<img src="docs/typography/amelie-photo-booth.jpg" width="373" alt="Photo-booth pictures with handwritten signs, SOUHAITEZ VOUS ME RENCONTRER ?, and a torn photo of a masked Zorro holding a sign for Café les 2 Moulins">
+</p>
+
+*Left to right: Chief Brody's typed death report for Chrissie Watkins in Jaws (1975), an IBM Wheelwriter electronic typewriter, and Amélie's photo-booth messages to Nino in Amélie (2001). The report shows a film's paperwork typed in capitals on a ruled form, like the call sheets and the case files of Script. A typewriter has one size of letters, all of the same width, which is why Script uses Courier Prime at one size. Amélie's homemade messages are the quirky paperwork that the Amélie story of Script plays on.*
+
+*Credits (resized): Jaws © Universal Pictures; Amélie © the producers of Amélie (UGC Images, Tapioca Films, France 3 Cinéma); the [IBM Wheelwriter](https://commons.wikimedia.org/wiki/File:IBM_6750-2_Wheelwriter_%281%29.jpg) by Museon, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0), on Wikimedia Commons.*
 
 ### 3.4 Stories
 
