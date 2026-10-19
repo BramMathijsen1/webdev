@@ -28,7 +28,7 @@ The web application has different general design choices and two themes. The pic
 
 ### 3.1 General
 
-For the general design the golden ratio (about 1.618) has been used on every page: the biggest panel is 1.618 times as wide as the other panels. On the story pages the three main panels are divided in three parts, where the right part is the biggest. In Affiche this part has the map, because the map needs to be clearly visible; in Script it has the list of stops. On the location pages the biggest panel is on the left: the pictures in Affiche and the text in Script.
+The main page consists of four panels. And introduction left, in the centre the story cards and on the right the maps of the cities that are represented. In the city map there are location pins with letters that are the first letters of the movies that are using the specific locations. For the other general design the golden ratio (about 1.618) has been used on every page: the biggest panel is 1.618 times as wide as the other panels. On the story pages the three main panels are divided in three parts, where the right part is the biggest. In Affiche this part has the map, because the map needs to be clearly visible; in Script it has the list of stops. On the location pages the biggest panel is on the left: the pictures in Affiche and the text in Script.
 
 Every page is exactly as big as the screen. Only the panels scroll, each on its own. On a portrait screen, such as a phone, the panels are shown one at a time, with tabs to switch between them.
 
