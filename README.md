@@ -36,3 +36,7 @@ Then open http://localhost:8000/. A local servers is needed for the back-end fro
 - Video clips are embedded from their channels on YouTube (youtube-nocookie) and load only when played.
 - Film stills © their rights holders, credited under each picture.
 - Fonts under the SIL Open Font License: Limelight, Jost and Courier Prime.
+
+## Use of AI
+
+An LLM agent was used while making this project: to assist with the coding, to generate texts, and as a sparring partner for the design. But I made the design and technical decisions.  
