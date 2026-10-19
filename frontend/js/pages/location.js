@@ -142,6 +142,8 @@ function drawText(place, settings) {
       // aria-disabled (not disabled) keeps the button focusable, so its explanation can be read.
       button.setAttribute('aria-disabled', String(atEnd));
       button.title = atEnd ? button.dataset.end : '';
+      // The two tone buttons are toggles, pressed while their text is shown.
+      if (button.dataset.axis === 'tone') button.setAttribute('aria-pressed', String(cell.tone === toneOf(Number(button.dataset.direction))));
     }
   };
   part('switches').addEventListener('click', (event) => {
@@ -155,11 +157,21 @@ function drawText(place, settings) {
   show(settings.cell);
 }
 
-// One step along one axis, keeping the other two; null at the end of the axis.
+// One step along one axis, keeping the other two; null at the end of the axis. The two tone buttons
+// go straight to their text instead, and back to the adult text when pressed again.
 function move(cell, axis, direction) {
+  if (axis === 'tone') {
+    const tone = toneOf(direction);
+    return { ...cell, tone: cell.tone === tone ? DEFAULT_CELL.tone : tone };
+  }
   const values = AXES[axis];
   const value = values[values.indexOf(cell[axis]) + direction];
   return value ? { ...cell, [axis]: value } : null;
+}
+
+// "Do you want to play?" asks for the young text, "additional details and references" for the scholar one.
+function toneOf(direction) {
+  return direction < 0 ? AXES.tone[0] : AXES.tone[AXES.tone.length - 1];
 }
 
 // "Do you want to play?": the young tone shows the location's quizzes and challenges.

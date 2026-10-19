@@ -46,10 +46,11 @@ export function createMap(element, center, zoom) {
   return map;
 }
 
-// A round pin with a short label in it: a stop number, S for the start, ★ for a place on its own.
+// A round pin with a short label in it: a stop number, S for the start, ★ for a place on its own,
+// or the initial of its film on the map of a city. Returns the marker, so a popup can be added.
 export function pin(map, point, label, { title = '', current = false } = {}) {
   const icon = L.divIcon({ className: current ? 'lmml-pin is-current' : 'lmml-pin', html: `<span>${label}</span>`, iconSize: [30, 30] });
-  L.marker([point.lat, point.lng], { icon, title }).addTo(map);
+  return L.marker([point.lat, point.lng], { icon, title }).addTo(map);
 }
 
 // A straight line from one stop to the next: solid on foot, dashed by public transport.

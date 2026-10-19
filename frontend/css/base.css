@@ -40,7 +40,7 @@
    Location    .lmml-location[data-chapter] .lmml-slug[data-step] .lmml-productions .lmml-chapter
                .lmml-narration .lmml-text[data-tone][data-competence][data-length]
                .lmml-version[data-tone][data-length] [data-level] .lmml-switches
-               button[data-axis][data-direction][aria-disabled] .lmml-play .lmml-sources .lmml-options
+               button[data-axis][data-direction][aria-disabled][aria-pressed] .lmml-play .lmml-sources .lmml-options
                .lmml-gallery .lmml-figure[data-kind][data-frame][data-aspect] .lmml-placeholder
                .lmml-credit .lmml-recognise .lmml-map .lmml-navigate .lmml-next .lmml-next-name .lmml-next-time
                .lmml-scenes .lmml-scene .lmml-camera .lmml-costume .lmml-meta
@@ -313,8 +313,8 @@ html:not([data-theme]) body {
    only decides which part goes in which panel (grid-template-areas). These areas, with the pictures
    and the map in the lead panels (visual first), are the default. */
 .lmml-home {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
-  grid-template-areas: "intro stories";
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr) minmax(0, 1fr);
+  grid-template-areas: "intro stories map";
 }
 
 .lmml-story {
@@ -333,6 +333,12 @@ html:not([data-theme]) body {
 }
 
 @media (orientation: landscape) and (max-aspect-ratio: 1618/1000) {
+  .lmml-home {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
+    grid-template-rows: minmax(0, 1.618fr) minmax(0, 1fr);
+    grid-template-areas: "intro stories" "map stories";
+  }
+
   .lmml-story {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
     grid-template-rows: minmax(0, 1.618fr) minmax(0, 1fr);
@@ -686,6 +692,12 @@ html:not([data-theme]) body {
   background: transparent;
   color: var(--color-text);
   font-size: 0.9rem;
+}
+
+/* A pressed tone button ("Do you want to play?") is shown in reverse. */
+.lmml-switches .lmml-button[aria-pressed="true"] {
+  background: var(--color-text);
+  color: var(--color-panel);
 }
 
 .lmml-options {

@@ -7,8 +7,10 @@
   <meta name="description" content="LMML is a companion for visiting film and TV filming locations in Paris and London, one story at a time.">
   <meta name="theme-color" content="#1d2b4a">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="css/base.css">
   <link id="theme-css" rel="stylesheet" href="themes/affiche/theme.css">
+  <script src="vendor/leaflet/leaflet.js" defer></script>
   <script src="vendor/translate/translate.js" defer></script>
   <script type="module" src="js/pages/index.js"></script>
 </head>
@@ -16,15 +18,40 @@
   <a class="lmml-skip" href="#main">Skip to the content</a>
   <header class="lmml-header"><a class="lmml-brand" href="index.html">LMML</a></header>
 
-  <!-- The start page; js/pages/index.js adds the stories of each city. -->
+  <!-- The start page: why these places, how to read a story, the stories and a map of each city.
+       js/pages/index.js adds the stories and the maps. -->
   <main id="main" class="lmml-canvas lmml-home" tabindex="-1">
-    <section class="lmml-panel lmml-hero" data-panel="intro">
-      <h1>Walk into the films</h1>
-      <p class="lmml-lead">Pick a story, then follow it from one filming location to the next.</p>
-    </section>
-    <section class="lmml-panel" data-panel="stories" aria-label="Stories">
-      <p class="lmml-loading">Loading the stories…</p>
-    </section>
+    <nav class="lmml-tabs" aria-label="Parts of this page">
+      <a href="#intro">Welcome</a>
+      <a href="#stories">Stories</a>
+      <a href="#map">Map</a>
+    </nav>
+
+    <div class="lmml-panels">
+      <section class="lmml-panel lmml-hero" id="intro" data-panel="intro">
+        <h1>Walk into the films</h1>
+        <p class="lmml-lead">Pick a story, then follow it from one filming location to the next.</p>
+        <h2>Why these places</h2>
+        <p>Films and series turn real streets into stories. LMML brings together the places in Paris and London where four of them were shot: Amélie, Emily in Paris, Love Actually and Sherlock. Stand where the camera stood, and you see a city you thought you knew with new eyes. Every place is described from documented facts, each with its source.</p>
+        <h2>How to read a story</h2>
+        <ul>
+          <li>Each story follows one film or series, chapter by chapter, from stop to stop. You can go back and forth as you like.</li>
+          <li>A stop tells you how to get there, how to recognise the place, what happened there on screen and where the camera stood.</li>
+          <li>The text adapts to you: longer or shorter, simpler or more difficult, with games for young visitors or references for scholars.</li>
+          <li>Each story opens in its own theme; the theme menu at the top changes it.</li>
+          <li>On site, the QR code of a place opens it as a stop of the story you are following.</li>
+        </ul>
+      </section>
+
+      <section class="lmml-panel" id="stories" data-panel="stories" aria-label="Stories">
+        <p class="lmml-loading">Loading the stories…</p>
+      </section>
+
+      <section class="lmml-panel" id="map" data-panel="map">
+        <h2>Map</h2>
+        <p>Every place in LMML, city by city. Open a pin for the place and its page.</p>
+      </section>
+    </div>
   </main>
 
   <footer class="lmml-footer"></footer>

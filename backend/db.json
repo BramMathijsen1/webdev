@@ -4,7 +4,7 @@
     "description": "Film and TV filming locations in Paris and London, organised into stories.",
     "version": "1.0",
     "language": "en",
-    "updated": "2026-10-16",
+    "updated": "2026-10-19",
     "license": "Texts and data: written for this course project. Photos: Wikimedia Commons, each under the licence given with it. Film stills: © their rights holders, used for study."
   },
   "regions": [
@@ -5764,247 +5764,10 @@
   ],
   "narratives": [
     {
-      "id": "two-parisiennes",
-      "region": "paris",
-      "title": "Two Parisiennes",
-      "premise": "Two women, two ways of meeting Paris. Amélie Poulain is the local dreamer who hardly ever leaves her village of Montmartre; Emily Cooper is the newcomer who arrives knowing nothing and falls for the city one pastry at a time. Follow them from Montmartre to the Latin Quarter, past the monuments every visitor should see.",
-      "pointOfView": "Two heroines, two ways of being in Paris: the local and the newcomer",
-      "audience": "School groups (about 14–18) with their teachers; families",
-      "defaults": {"tone": "young", "competence": "average", "length": "brief"},
-      "theme": "affiche",
-      "start": {"name": "Métro Abbesses (line 12)", "geo": {"lat": 48.8848, "lng": 2.33864}},
-      "chapters": [
-        {
-          "id": "village",
-          "title": "Morning: Amélie's village",
-          "intro": "Montmartre was a village of windmills and vineyards on a hill outside Paris until the city absorbed it in 1860, and it still feels like one: steep streets, steps, small shops and a white basilica on top.",
-          "stops": [
-            {
-              "location": "abbesses",
-              "scenes": ["amelie-abbesses"],
-              "media": ["abbesses-photo", "amelie-abbesses-still"],
-              "narration": "Our day starts underground. Amélie first notices Nino, the boy who collects torn-up photos, in a Métro station like this one, 36 metres below the street. The film's platform scenes were shot in another station, but this is the station of Amélie's neighbourhood, and its glass entrance is a little masterpiece of Art Nouveau.",
-              "recognise": "You are already here: look for the glass canopy shaped like a fan, on green iron stems, with “Métropolitain” in curling letters.",
-              "directions": {
-                "mode": "walk",
-                "text": "Come up from the platforms of Abbesses station by the lifts or the spiral stairs, and step out into the square.",
-                "meters": 0,
-                "minutes": 1
-              },
-              "minutes": 15
-            },
-            {
-              "location": "sacre-coeur",
-              "scenes": ["amelie-treasure-hunt"],
-              "media": ["sacre-coeur-photo", "amelie-treasure-hunt-still", "amelie-treasure-hunt-video"],
-              "narration": "To return Nino's lost photo album without being seen, Amélie sets up a treasure hunt in these gardens: painted arrows lead him up the paths, a public phone rings by the carousel, and a statue performer at the top points him to a telescope. Climb the paths like Nino, then turn around at the top for the view over all of Paris.",
-              "recognise": "Head towards the white domes. At the foot of the gardens, on Place Saint-Pierre, a vintage carousel turns below the terraces and staircases of Square Louise-Michel.",
-              "directions": {
-                "mode": "walk",
-                "text": "Walk east from Place des Abbesses along Rue Yvonne-Le-Tac, then follow the route on the map to Place Saint-Pierre, at the foot of the gardens.",
-                "meters": 510,
-                "minutes": 7
-              },
-              "minutes": 40
-            },
-            {
-              "location": "lamarck-caulaincourt",
-              "scenes": ["amelie-blind-man"],
-              "media": ["lamarck-caulaincourt-photo", "amelie-blind-man-still"],
-              "narration": "On the quieter north side of the hill, Amélie takes a blind man by the arm and walks him along Rue Lamarck, describing everything around him in a breathless rush. She leaves him at this station and runs off up the steps, and he is left glowing on the corner.",
-              "recognise": "Coming down the north side of the hill, look for the Métro sign set into the steep slope, with flights of steps climbing beside the entrance.",
-              "directions": {
-                "mode": "walk",
-                "text": "Walk round behind the basilica and down the north side of the hill to Rue Lamarck, then follow it west to the station. Follow the route on the map: there are steps.",
-                "meters": 940,
-                "minutes": 12
-              },
-              "minutes": 15
-            },
-            {
-              "location": "au-marche-de-la-butte",
-              "scenes": ["amelie-grocery"],
-              "media": ["au-marche-de-la-butte-photo", "amelie-grocery-still"],
-              "narration": "Amélie lives in this very building, above the grocery. In the film its owner, Collignon, is horrible to his gentle assistant Lucien, so Amélie takes a quiet revenge and plays tricks on him until he doubts his own mind. The real shop is still open, with newspaper cuttings about the film in its window.",
-              "recognise": "On Rue des Trois-Frères: a green corner shop with fruit and vegetables piled outside and a burgundy awning reading “Au Marché de la Butte”.",
-              "directions": {
-                "mode": "walk",
-                "text": "Cross back over the hill to its south side and come down to Rue des Trois-Frères. Follow the route on the map.",
-                "meters": 610,
-                "minutes": 8
-              },
-              "minutes": 15
-            },
-            {
-              "location": "cafe-des-2-moulins",
-              "scenes": ["amelie-cafe"],
-              "media": ["cafe-des-2-moulins-photo", "amelie-cafe-still", "amelie-cafe-video"],
-              "narration": "This is where Amélie works as a waitress, among the café's eccentric regulars. The café is still open, its dining room almost exactly as in the film, and it serves an “Amélie” menu with crème brûlée: cracking its sugar crust with a spoon is one of Amélie's favourite little pleasures.",
-              "recognise": "At the corner of Rue Lepic and Rue Cauchois: red awnings with gold letters reading “Café des 2 Moulins”.",
-              "directions": {
-                "mode": "walk",
-                "text": "Walk west along Rue des Abbesses to Rue Lepic, then follow Rue Lepic downhill to the corner of Rue Cauchois.",
-                "meters": 470,
-                "minutes": 6
-              },
-              "minutes": 20
-            }
-          ]
-        },
-        {
-          "id": "newcomer",
-          "title": "Midday: an American in Paris",
-          "intro": "Emily Cooper comes to Paris for work and is changed by it. The young marketing executive of Emily in Paris learns French manners the hard way, but finds a friend, a favourite lunch spot and a city she loves.",
-          "stops": [
-            {
-              "location": "pont-alexandre-iii",
-              "scenes": ["eip-perfume-shoot"],
-              "media": ["pont-alexandre-iii-photo", "eip-perfume-shoot-still", "eip-perfume-shoot-video"],
-              "narration": "In Emily in Paris, Emily's agency shoots a perfume advert on this golden bridge, with a model walking past a group of men in suits. Emily wonders aloud whether the idea is “sexy or sexist”, and the argument ends up becoming part of the campaign.",
-              "recognise": "Walk towards the river and look for the tall pillars topped with gilded winged horses at each end of the bridge.",
-              "directions": {
-                "mode": "metro",
-                "minutes": 36,
-                "meters": 3810,
-                "text": "Walk east along Boulevard de Clichy to Pigalle (about 10 minutes), then take line 12 towards Mairie d'Issy for six stops to Concorde. From the station, walk west along the river, by the Cours la Reine, to the bridge."
-              },
-              "minutes": 15
-            },
-            {
-              "location": "palais-royal-garden",
-              "scenes": ["eip-palais-royal"],
-              "media": ["palais-royal-garden-photo", "eip-palais-royal-still", "eip-palais-royal-video"],
-              "narration": "Left out by her French colleagues at lunchtime, Emily eats alone in this garden and meets Mindy, who becomes her best friend in Paris. It is the perfect place for your own picnic: find a bench under the trees, then explore the black-and-white striped columns in the courtyard at the south end.",
-              "recognise": "Through the arcades north of the station: a long garden of gravel, flower beds and clipped lime trees, with black-and-white striped columns in the courtyard.",
-              "directions": {
-                "mode": "metro",
-                "minutes": 20,
-                "meters": 2200,
-                "text": "Walk to Champs-Élysées–Clemenceau station and take line 1 towards Château de Vincennes for three stops to Palais Royal–Musée du Louvre. The garden is just north of the station."
-              },
-              "minutes": 50
-            },
-            {
-              "location": "place-de-valois",
-              "scenes": ["eip-savoir"],
-              "media": ["place-de-valois-photo", "eip-savoir-still"],
-              "narration": "Right behind the garden is the quiet little square that plays Savoir, the marketing agency where Emily works for the formidable Sylvie. Imagine Emily arriving here every morning in a bold new outfit, and Sylvie raising an eyebrow.",
-              "recognise": "A small square closed in on all sides by tall cream stone buildings with wrought-iron balconies, like a courtyard open to the street.",
-              "directions": {
-                "mode": "walk",
-                "text": "Leave the garden by the eastern arcade to Rue de Valois; the little square opens off it. Follow the route on the map.",
-                "meters": 270,
-                "minutes": 4
-              },
-              "minutes": 10
-            }
-          ]
-        },
-        {
-          "id": "river",
-          "title": "Afternoon: Amélie by the river",
-          "intro": "Amélie's story begins, and turns, by the Seine. On the Pont des Arts she discovers the joy of helping others; at Notre-Dame, in the film's darkly comic prologue, her childhood changes for ever.",
-          "stops": [
-            {
-              "location": "pont-des-arts",
-              "scenes": ["amelie-pont-des-arts"],
-              "media": ["pont-des-arts-photo", "amelie-pont-des-arts-still"],
-              "narration": "After secretly returning a box of childhood treasures to its owner, Amélie crosses this bridge towards the Louvre, glowing with happiness, and decides to keep helping people in secret. Walk across slowly and enjoy the view of the islands, the Louvre and the domed Institut de France.",
-              "recognise": "A footbridge of slim metal arches with a wooden deck, running from the Louvre to the domed Institut de France.",
-              "directions": {
-                "mode": "walk",
-                "text": "Walk south past the Louvre to the river; the footbridge starts on the quay opposite the Louvre's square courtyard.",
-                "meters": 670,
-                "minutes": 9
-              },
-              "minutes": 15
-            },
-            {
-              "location": "notre-dame",
-              "scenes": ["amelie-notre-dame"],
-              "media": ["notre-dame-photo", "amelie-notre-dame-still"],
-              "narration": "In the film's prologue, Amélie and her mother come here every year to light a candle. One day, as they leave, a tourist falls from the tower and lands on Amélie's mother: a strange, darkly funny accident that leaves Amélie to grow up alone with her father. The cathedral itself survived a terrible fire in 2019 and has reopened after a long restoration; entry is free.",
-              "recognise": "On the Île de la Cité: two square towers, three deeply carved doorways and a great rose window facing a wide square.",
-              "directions": {
-                "mode": "walk",
-                "text": "Cross the bridge to the Left Bank and walk east along the quays, past the green bookstalls, then cross to the island by the Petit-Pont. Follow the route on the map.",
-                "meters": 1280,
-                "minutes": 17
-              },
-              "minutes": 30
-            }
-          ]
-        },
-        {
-          "id": "latin-quarter",
-          "title": "Evening: the Latin Quarter",
-          "intro": "Across the river from Notre-Dame lies the Latin Quarter, the old student district on the hill of Sainte-Geneviève. Emily lives here in a tiny attic flat with a view of the Panthéon, and Amélie's first good deed bears fruit in a bar on Rue Mouffetard.",
-          "stops": [
-            {
-              "location": "place-de-l-estrapade",
-              "scenes": ["eip-apartment"],
-              "media": ["place-de-l-estrapade-photo", "eip-apartment-still", "eip-apartment-video"],
-              "narration": "This little square is Emily's home in Paris. From her tiny top-floor flat she can see the Panthéon, and on the stairs she meets her handsome neighbour, Gabriel. Find the green fountain and pick out the building with the highest windows.",
-              "recognise": "Just south of the dome of the Panthéon: a small cobbled square with a green cast-iron fountain, lamp posts and benches.",
-              "directions": {
-                "mode": "walk",
-                "minutes": 16,
-                "meters": 1230,
-                "text": "Cross to the Left Bank by the Petit-Pont, then climb the hill of Sainte-Geneviève towards the dome of the Panthéon; the square is just south of it. Follow the route on the map."
-              },
-              "minutes": 10
-            },
-            {
-              "location": "boulangerie-moderne",
-              "scenes": ["eip-pain-au-chocolat"],
-              "media": ["boulangerie-moderne-photo", "eip-pain-au-chocolat-still", "eip-pain-au-chocolat-video"],
-              "narration": "On her first morning in Paris, Emily buys a pain au chocolat here. The baker corrects her French, but the pastry is the best she has ever tasted. Time for your own afternoon snack, the French goûter!",
-              "recognise": "On the corner of the square: a black-painted bakery front with gold letters reading “Boulangerie Moderne”.",
-              "directions": {
-                "mode": "walk",
-                "text": "Cross the square to the corner of Rue des Fossés-Saint-Jacques.",
-                "meters": 230,
-                "minutes": 3
-              },
-              "minutes": 15
-            },
-            {
-              "location": "terra-nera",
-              "scenes": ["eip-gabriels-restaurant"],
-              "media": ["terra-nera-photo", "eip-gabriels-restaurant-still"],
-              "narration": "Next door, the real Italian restaurant Terra Nera plays Les Deux Compères, where Gabriel works as a chef. Fans come from all over the world to take photos here. Can you see why?",
-              "recognise": "Right next to the bakery: a small restaurant under a grand doorway painted deep red.",
-              "directions": {"mode": "walk", "text": "Next door to the bakery.", "meters": 10, "minutes": 1},
-              "minutes": 10
-            },
-            {
-              "location": "le-verre-a-pied",
-              "scenes": ["amelie-bretodeau-bar"],
-              "media": ["le-verre-a-pied-photo", "amelie-bretodeau-bar-still"],
-              "narration": "Our last stop brings us back to Amélie. In this old bar on Rue Mouffetard, she listens in secret as Dominique Bretodeau tells how his lost box of childhood treasures came back to him, and how it has made him want to see his family again. Her very first good deed has worked: a happy ending for our day.",
-              "recognise": "Halfway down Rue Mouffetard, the narrow, sloping market street: a small, old-fashioned café-bar at number 118, among fruit stalls and cheese shops.",
-              "directions": {
-                "mode": "walk",
-                "text": "Walk east to Place de la Contrescarpe, then down Rue Mouffetard to number 118. Follow the route on the map.",
-                "meters": 770,
-                "minutes": 10
-              },
-              "minutes": 15
-            }
-          ]
-        }
-      ],
-      "cataloguing": {
-        "status": "draft",
-        "sources": ["ref-solosophie-amelie", "ref-worldswaiting-amelie", "ref-sortiraparis-emily", "ref-openstreetmap"],
-        "modified": "2026-10-17"
-      }
-    },
-    {
       "id": "amelie-scene-by-scene",
       "region": "paris",
       "title": "Amélie, scene by scene",
-      "premise": "Jean-Pierre Jeunet's Amélie (2001) turned a corner of Montmartre into the world's idea of whimsical Paris. This story follows the film broadly in the order of its plot, from Amélie's small private pleasures to the door she finally opens, crossing back and forth between Montmartre and the stations and canal of the 10th arrondissement.",
+      "premise": "Jean-Pierre Jeunet's Amélie (2001) turned a corner of Montmartre into the world's idea of whimsical Paris. This story follows the film broadly in the order of its plot, from Amélie's small private pleasures and the prologue at Notre-Dame to the door she finally opens, crossing back and forth between the canal of the 10th arrondissement, the Seine, the Latin Quarter and Montmartre.",
       "pointOfView": "Amélie Poulain, the shy waitress who arranges other people's happiness before she dares to risk her own",
       "audience": "Film lovers who know Amélie",
       "defaults": {"tone": "adult", "competence": "average", "length": "brief"},
@@ -6031,16 +5794,16 @@
               "minutes": 20
             },
             {
-              "location": "cafe-des-2-moulins",
-              "scenes": ["amelie-cafe"],
-              "media": ["amelie-cafe-still", "cafe-des-2-moulins-photo", "amelie-cafe-video"],
-              "narration": "Amélie waits tables here among a gallery of regulars: Georgette the hypochondriac at the tobacco counter, Joseph the jealous ex-lover, Hipolito the failed writer. The tobacco counter has gone, but the dining room is almost exactly as on screen, and the café now serves an “Amélie” menu with crème brûlée.",
-              "recognise": "At the corner of Rue Lepic and Rue Cauchois: red awnings with gold letters reading “Café des 2 Moulins”, and a blue Rue Lepic sign on the corner pillar.",
+              "location": "notre-dame",
+              "scenes": ["amelie-notre-dame"],
+              "media": ["amelie-notre-dame-still", "notre-dame-photo"],
+              "narration": "In the film's prologue, little Amélie and her mother come to Notre-Dame every year to light a candle and pray for a little brother. One year, as they leave, a tourist from Quebec falls from the tower and lands on her mother, killing her: a darkly comic accident, typical of the film's tone, that leaves Amélie to grow up alone with her father. Entry to the cathedral is free.",
+              "recognise": "On the Île de la Cité: two square towers, three deeply carved doorways and a great rose window facing a wide square.",
               "directions": {
                 "mode": "metro",
-                "minutes": 25,
-                "meters": 3700,
-                "text": "Walk back to Jacques Bonsergent and take line 5 towards Bobigny for three stops to Stalingrad, then line 2 towards Porte Dauphine for five stops to Blanche. The café is three minutes up Rue Lepic."
+                "minutes": 30,
+                "meters": 2600,
+                "text": "Walk north-west to Gare de l'Est (about 12 minutes) and take line 4 towards Bagneux for seven stops to Cité, on the island. Notre-Dame is a few minutes' walk east, along Rue de Lutèce."
               },
               "minutes": 30
             }
@@ -6051,6 +5814,48 @@
           "title": "Helping others",
           "intro": "On the night of Princess Diana's death in 1997, Amélie finds a box of childhood treasures hidden behind a tile in her flat. She tracks down its owner, returns it in secret, and watches his joy. It changes her life: from now on she will arrange other people's happiness, without ever being seen.",
           "stops": [
+            {
+              "location": "le-verre-a-pied",
+              "scenes": ["amelie-bretodeau-bar"],
+              "media": ["amelie-bretodeau-bar-still", "le-verre-a-pied-photo"],
+              "narration": "Having returned his box of childhood treasures in secret, Amélie follows Dominique Bretodeau into this old bar on Rue Mouffetard and listens as he tells a stranger how it came back to him, and how it has made him want to see his estranged daughter and grandson. Her first good deed has worked. The bar still serves a glass of wine or the plat du jour.",
+              "recognise": "Halfway down Rue Mouffetard, the narrow, sloping market street: a small, old-fashioned café-bar at number 118, among fruit stalls and cheese shops.",
+              "directions": {
+                "mode": "walk",
+                "minutes": 22,
+                "meters": 1650,
+                "text": "Cross to the Left Bank and walk south up the hill of Sainte-Geneviève to Rue Mouffetard; the bar is at number 118. Follow the route on the map."
+              },
+              "minutes": 20
+            },
+            {
+              "location": "pont-des-arts",
+              "scenes": ["amelie-pont-des-arts"],
+              "media": ["amelie-pont-des-arts-still", "pont-des-arts-photo"],
+              "narration": "Glowing with the joy of that first good deed, Amélie crosses the Pont des Arts towards the Louvre and resolves to keep helping people, in secret. Walk to the far end, by the domed Institut de France, and come back towards the Louvre to retrace her crossing. The love padlocks that once covered the railings were removed in 2015, and glass panels now line them.",
+              "recognise": "A footbridge of slim metal arches with a wooden deck, running from the Louvre to the domed Institut de France.",
+              "directions": {
+                "mode": "metro",
+                "minutes": 20,
+                "meters": 2500,
+                "text": "Walk to Censier–Daubenton station, three minutes away, and take line 7 towards La Courneuve for six stops to Pont Neuf. Walk west along the river to the footbridge."
+              },
+              "minutes": 15
+            },
+            {
+              "location": "cafe-des-2-moulins",
+              "scenes": ["amelie-cafe"],
+              "media": ["amelie-cafe-still", "cafe-des-2-moulins-photo", "amelie-cafe-video"],
+              "narration": "Back at work: amélie waits tables here among a gallery of regulars: Georgette the hypochondriac at the tobacco counter, Joseph the jealous ex-lover, Hipolito the failed writer. The tobacco counter has gone, but the dining room is almost exactly as on screen, and the café now serves an “Amélie” menu with crème brûlée.",
+              "recognise": "At the corner of Rue Lepic and Rue Cauchois: red awnings with gold letters reading “Café des 2 Moulins”, and a blue Rue Lepic sign on the corner pillar.",
+              "directions": {
+                "mode": "metro",
+                "minutes": 40,
+                "meters": 3400,
+                "text": "Walk north through the Louvre to Palais Royal–Musée du Louvre station and take line 1 towards La Défense for two stops to Concorde, then line 12 towards Mairie d'Aubervilliers for seven stops to Abbesses. The café is seven minutes' walk west, along Rue des Abbesses and down Rue Lepic."
+              },
+              "minutes": 30
+            },
             {
               "location": "lamarck-caulaincourt",
               "scenes": ["amelie-blind-man"],
@@ -6188,147 +5993,146 @@
           "ref-worldswaiting-amelie",
           "ref-annieandre-amelie",
           "ref-francophiles-amelie",
+          "ref-openstreetmap",
+          "ref-wikidata",
+          "ref-commons-abbesses"
+        ],
+        "modified": "2026-10-19"
+      }
+    },
+    {
+      "id": "emilys-paris",
+      "region": "paris",
+      "title": "Emily's Paris",
+      "premise": "Emily Cooper arrives in Paris for work knowing almost nothing about the city, and falls for it one pastry at a time. Follow her from the golden Pont Alexandre III and the gardens of the Palais-Royal, where she finds her first friend, to the little square in the Latin Quarter where she lives.",
+      "pointOfView": "Emily Cooper, the American newcomer who learns Paris the hard way",
+      "audience": "School groups (about 14–18) with their teachers; families",
+      "defaults": {"tone": "young", "competence": "average", "length": "brief"},
+      "theme": "affiche",
+      "start": {"name": "Invalides (Métro lines 8 and 13, RER C)", "geo": {"lat": 48.8611, "lng": 2.3145}},
+      "chapters": [
+        {
+          "id": "newcomer",
+          "title": "Midday: an American in Paris",
+          "intro": "Emily Cooper comes to Paris for work and is changed by it. The young marketing executive of Emily in Paris learns French manners the hard way, but finds a friend, a favourite lunch spot and a city she loves.",
+          "stops": [
+            {
+              "location": "pont-alexandre-iii",
+              "scenes": ["eip-perfume-shoot"],
+              "media": ["pont-alexandre-iii-photo", "eip-perfume-shoot-still", "eip-perfume-shoot-video"],
+              "narration": "In Emily in Paris, Emily's agency shoots a perfume advert on this golden bridge, with a model walking past a group of men in suits. Emily wonders aloud whether the idea is “sexy or sexist”, and the argument ends up becoming part of the campaign.",
+              "recognise": "Walk towards the river and look for the tall pillars topped with gilded winged horses at each end of the bridge.",
+              "directions": {
+                "mode": "walk",
+                "minutes": 5,
+                "meters": 400,
+                "text": "From Invalides station, walk along the Quai d'Orsay to the foot of the bridge."
+              },
+              "minutes": 15
+            },
+            {
+              "location": "palais-royal-garden",
+              "scenes": ["eip-palais-royal"],
+              "media": ["palais-royal-garden-photo", "eip-palais-royal-still", "eip-palais-royal-video"],
+              "narration": "Left out by her French colleagues at lunchtime, Emily eats alone in this garden and meets Mindy, who becomes her best friend in Paris. It is the perfect place for your own picnic: find a bench under the trees, then explore the black-and-white striped columns in the courtyard at the south end.",
+              "recognise": "Through the arcades north of the station: a long garden of gravel, flower beds and clipped lime trees, with black-and-white striped columns in the courtyard.",
+              "directions": {
+                "mode": "metro",
+                "minutes": 20,
+                "meters": 2200,
+                "text": "Walk to Champs-Élysées–Clemenceau station and take line 1 towards Château de Vincennes for three stops to Palais Royal–Musée du Louvre. The garden is just north of the station."
+              },
+              "minutes": 50
+            },
+            {
+              "location": "place-de-valois",
+              "scenes": ["eip-savoir"],
+              "media": ["place-de-valois-photo", "eip-savoir-still"],
+              "narration": "Right behind the garden is the quiet little square that plays Savoir, the marketing agency where Emily works for the formidable Sylvie. Imagine Emily arriving here every morning in a bold new outfit, and Sylvie raising an eyebrow.",
+              "recognise": "A small square closed in on all sides by tall cream stone buildings with wrought-iron balconies, like a courtyard open to the street.",
+              "directions": {
+                "mode": "walk",
+                "text": "Leave the garden by the eastern arcade to Rue de Valois; the little square opens off it. Follow the route on the map.",
+                "meters": 270,
+                "minutes": 4
+              },
+              "minutes": 10
+            }
+          ]
+        },
+        {
+          "id": "latin-quarter",
+          "title": "Afternoon: Emily's Latin Quarter",
+          "intro": "Across the river from the Louvre lies the Latin Quarter, the old student district on the hill of Sainte-Geneviève. Emily lives here, in a tiny attic flat with a view of the Panthéon, on a little square with a bakery and the restaurant where her neighbour cooks.",
+          "stops": [
+            {
+              "location": "place-de-l-estrapade",
+              "scenes": ["eip-apartment"],
+              "media": ["place-de-l-estrapade-photo", "eip-apartment-still", "eip-apartment-video"],
+              "narration": "This little square is Emily's home in Paris. From her tiny top-floor flat she can see the Panthéon, and on the stairs she meets her handsome neighbour, Gabriel. Find the green fountain and pick out the building with the highest windows.",
+              "recognise": "Just south of the dome of the Panthéon: a small cobbled square with a green cast-iron fountain, lamp posts and benches.",
+              "directions": {
+                "mode": "metro",
+                "minutes": 25,
+                "meters": 2500,
+                "text": "Walk back to Palais Royal–Musée du Louvre station and take line 7 towards Mairie d'Ivry or Villejuif for six stops to Place Monge. Walk west, up the hill towards the Panthéon, to the square, about ten minutes. Follow the route on the map."
+              },
+              "minutes": 10
+            },
+            {
+              "location": "boulangerie-moderne",
+              "scenes": ["eip-pain-au-chocolat"],
+              "media": ["boulangerie-moderne-photo", "eip-pain-au-chocolat-still", "eip-pain-au-chocolat-video"],
+              "narration": "On her first morning in Paris, Emily buys a pain au chocolat here. The baker corrects her French, but the pastry is the best she has ever tasted. Time for your own afternoon snack, the French goûter!",
+              "recognise": "On the corner of the square: a black-painted bakery front with gold letters reading “Boulangerie Moderne”.",
+              "directions": {
+                "mode": "walk",
+                "text": "Cross the square to the corner of Rue des Fossés-Saint-Jacques.",
+                "meters": 230,
+                "minutes": 3
+              },
+              "minutes": 15
+            },
+            {
+              "location": "terra-nera",
+              "scenes": ["eip-gabriels-restaurant"],
+              "media": ["terra-nera-photo", "eip-gabriels-restaurant-still"],
+              "narration": "Next door, the real Italian restaurant Terra Nera plays Les Deux Compères, where Gabriel works as a chef. Fans come from all over the world to take photos here. Can you see why?",
+              "recognise": "Right next to the bakery: a small restaurant under a grand doorway painted deep red.",
+              "directions": {"mode": "walk", "text": "Next door to the bakery.", "meters": 10, "minutes": 1},
+              "minutes": 10
+            }
+          ]
+        }
+      ],
+      "cataloguing": {
+        "status": "draft",
+        "sources": [
+          "ref-sortiraparis-emily",
+          "ref-worldswaiting-emily",
+          "ref-wikidata",
+          "ref-untapped-emily",
           "ref-openstreetmap"
         ],
-        "modified": "2026-10-16"
+        "modified": "2026-10-19"
       }
     },
     {
       "id": "shot-for-shot",
       "region": "london",
       "title": "Shot for shot",
-      "premise": "A long day through every London location of Love Actually and Sherlock, ordered for light and crowds, with the camera spot, the bearing and costume notes wherever they are known. Start in the morning at the door of 221B, have lunch in Chinatown, follow the river from Vauxhall to Southwark in the afternoon, and end at dusk on a doorstep in Notting Hill.",
+      "premise": "A day through the London of Love Actually (2003), ordered for light and crowds, with the camera spot, the bearing and costume notes wherever they are known: the South Bank in the morning, Christmas shopping in the West End, and at dusk the doorstep in Notting Hill where Mark holds up his cue cards.",
       "pointOfView": "Two film fans who want to stand exactly where the camera stood",
       "audience": "Film fans recreating shots, with a camera and a costume",
       "defaults": {"tone": "adult", "competence": "advanced", "length": "brief"},
       "theme": "affiche",
-      "start": {
-        "name": "Euston Square (Circle, Hammersmith & City and Metropolitan lines)",
-        "geo": {"lat": 51.5257, "lng": -0.1357}
-      },
+      "start": {"name": "Waterloo (Underground and National Rail)", "geo": {"lat": 51.5031, "lng": -0.1132}},
       "chapters": [
         {
-          "id": "221b-and-barts",
-          "title": "221B and Barts",
-          "intro": "Start in the morning at the door of 221B: number 185 North Gower Street played Baker Street, with Speedy's café next door. The Underground then takes you east to Smithfield, where St Bartholomew's Hospital is the scene of Sherlock and John's first meeting and of Sherlock's fall, and the Old Bailey's dome rises a few minutes' walk away.",
+          "id": "south-bank",
+          "title": "Morning on the South Bank",
+          "intro": "The day starts by the river: the riverside walk where Daniel and his stepson Sam sit on a bench and talk about love, and OXO Tower Wharf, where Mark lives.",
           "stops": [
-            {
-              "location": "north-gower-street",
-              "scenes": ["sherlock-221b"],
-              "media": ["sherlock-221b-still", "north-gower-street-photo"],
-              "narration": "Number 185 played 221B Baker Street. The camera stands across the street, looking south-west at the black door and Speedy's dark red awning beside it: get both in the frame, door on the left, café on the right. The door is a private home; Speedy's is a working café.",
-              "recognise": "Speedy's Sandwich Bar & Café with its dark red awning, and the black front door just to its left.",
-              "directions": {
-                "mode": "walk",
-                "minutes": 3,
-                "meters": 190,
-                "text": "Cross Euston Road and walk north up North Gower Street to Speedy's café at number 187."
-              },
-              "minutes": 25
-            },
-            {
-              "location": "st-bartholomews-hospital",
-              "scenes": ["sherlock-reichenbach-fall", "sherlock-first-meeting"],
-              "media": [
-                "sherlock-reichenbach-fall-still",
-                "st-bartholomews-hospital-photo",
-                "sherlock-reichenbach-fall-video",
-                "sherlock-first-meeting-video"
-              ],
-              "narration": "Two scenes, the beginning and the apparent end: the first meeting, in a laboratory nobody has identified, and the fall, filmed here on the roof. Stand on Giltspur Street and look up at the corner with the carved name: the camera looks up from roughly where John stands, with a wide lens and a steep tilt.",
-              "recognise": "A long stone hospital building on Giltspur Street, with “St Bartholomew's Hospital” carved high on its corner.",
-              "directions": {
-                "mode": "tube",
-                "minutes": 25,
-                "meters": 3500,
-                "text": "From Euston Square, take the Circle, Hammersmith & City or Metropolitan line three stops east to Barbican, then walk south to West Smithfield and Giltspur Street, about eight minutes."
-              },
-              "minutes": 20
-            },
-            {
-              "location": "old-bailey",
-              "scenes": ["sherlock-old-bailey"],
-              "media": ["old-bailey-photo"],
-              "narration": "The Old Bailey's façade appears in Sherlock's first two series; the courtroom scenes were filmed in Swansea. The guides do not identify the shots, so frame the gilded Lady Justice, with her sword and scales, on the dome, then the inscription over the main entrance on the street called Old Bailey.",
-              "recognise": "A long stone court building with a green dome topped by a gilded statue of Lady Justice holding a sword and scales.",
-              "directions": {
-                "mode": "walk",
-                "minutes": 3,
-                "meters": 250,
-                "text": "Walk south down Giltspur Street to Newgate Street; the Old Bailey is across the junction, and the street called Old Bailey runs south from there to the main entrance."
-              },
-              "minutes": 15
-            }
-          ]
-        },
-        {
-          "id": "chinatown",
-          "title": "Lunch in Chinatown",
-          "intro": "The Central line carries you west to Soho for lunch in Chinatown, where Sherlock and John follow a trail of mysterious painted symbols in “The Blind Banker”.",
-          "stops": [
-            {
-              "location": "gerrard-street",
-              "scenes": ["sherlock-chinatown"],
-              "media": ["sherlock-chinatown-still", "gerrard-street-photo"],
-              "narration": "“The Blind Banker” filmed in Chinatown at night; the camera looks west along Gerrard Street towards the gate near Wardour Street. At lunchtime the street is busy and bright, so use this visit to find the angle, and come back at dusk, when the lanterns are lit, for the night frame.",
-              "recognise": "A pedestrian street hung with red lanterns, with red lamp posts and bollards, a red telephone box and an ornate gate at the far end.",
-              "directions": {
-                "mode": "tube",
-                "minutes": 25,
-                "meters": 2600,
-                "text": "Walk to St Paul's station (about five minutes) and take the Central line four stops west to Tottenham Court Road. Walk south down Charing Cross Road into Chinatown; Gerrard Street is the pedestrian street hung with red lanterns. Follow the route on the map."
-              },
-              "minutes": 45
-            }
-          ]
-        },
-        {
-          "id": "river",
-          "title": "Along the river",
-          "intro": "The afternoon follows the Thames from Vauxhall to Southwark: Sherlock's run across Vauxhall Bridge, his aquarium and skate park on the South Bank, the bench and the flat of Love Actually, and the bloodhound trail of “The Six Thatchers” at Borough Market and Trinity Church Square.",
-          "stops": [
-            {
-              "location": "vauxhall-bridge",
-              "scenes": ["sherlock-vauxhall-bridge"],
-              "media": ["vauxhall-bridge-photo"],
-              "narration": "In “The Six Thatchers”, Sherlock runs across this bridge towards the SIS Building, the headquarters of MI6 at its south end. The camera set-ups are not documented: from the north half of the bridge, frame the road running towards the building. The bronze statues on the piers cannot be seen from the bridge itself; walk down to the riverside path to find them.",
-              "recognise": "A steel arch bridge with red-painted arches and bronze statues against its piers; at the south end, the stepped green-and-cream SIS Building.",
-              "directions": {
-                "mode": "tube",
-                "minutes": 25,
-                "meters": 3800,
-                "text": "Walk to Piccadilly Circus station (about five minutes), take the Piccadilly line one stop to Green Park, then the Victoria line three stops south to Vauxhall. The bridge starts beside the station."
-              },
-              "minutes": 20
-            },
-            {
-              "location": "sea-life-aquarium",
-              "scenes": ["sherlock-aquarium"],
-              "media": ["sherlock-aquarium-still", "sea-life-aquarium-photo", "sherlock-aquarium-video"],
-              "narration": "The aquarium scenes of “The Six Thatchers” were shot inside, in a single day, around the sharks' bedtime, and the tanks used are not documented. There is no exterior frame: buy a ticket if you want the blue, enclosed light of the scene, or settle for County Hall from the riverside.",
-              "recognise": "The huge stone County Hall, next to the London Eye and facing Parliament across the river.",
-              "directions": {
-                "mode": "walk",
-                "minutes": 26,
-                "meters": 1940,
-                "text": "Walk north along the Albert Embankment, the riverside path on the south bank, past Lambeth Bridge and St Thomas' Hospital to Westminster Bridge; County Hall is just beyond it."
-              },
-              "minutes": 45
-            },
-            {
-              "location": "southbank-skate-park",
-              "scenes": ["sherlock-graffiti"],
-              "media": ["sherlock-graffiti-still", "southbank-skate-park-photo"],
-              "narration": "Under the Queen Elizabeth Hall is the undercroft where Raz reads the walls for Sherlock. The graffiti has been painted over many times since 2010, so match the pillars and the space, not the paint. The skaters have priority.",
-              "recognise": "A concrete undercroft under the Queen Elizabeth Hall on the riverside: pillars and walls covered in graffiti, skaters and BMX riders.",
-              "directions": {
-                "mode": "walk",
-                "text": "Walk back north along the riverside, past the Royal Festival Hall, to the Queen Elizabeth Hall, about six minutes.",
-                "meters": 660,
-                "minutes": 9
-              },
-              "minutes": 15
-            },
             {
               "location": "gabriels-wharf-bench",
               "scenes": ["la-bench"],
@@ -6337,9 +6141,9 @@
               "recognise": "The riverside walk in front of Gabriel's Wharf, a courtyard of colourful painted shop fronts, with benches facing the Thames.",
               "directions": {
                 "mode": "walk",
-                "text": "Continue east along the Queen's Walk, past the National Theatre, to Gabriel's Wharf.",
-                "meters": 600,
-                "minutes": 8
+                "minutes": 11,
+                "meters": 840,
+                "text": "From Waterloo station, walk north-east along Stamford Street, then down Duchy Street to Gabriel's Wharf and the riverside walk in front of it."
               },
               "minutes": 15
             },
@@ -6356,41 +6160,13 @@
                 "minutes": 2
               },
               "minutes": 15
-            },
-            {
-              "location": "borough-market",
-              "scenes": ["sherlock-toby"],
-              "media": ["sherlock-toby-still", "borough-market-photo"],
-              "narration": "Toby the bloodhound's scenes in “The Six Thatchers” were filmed here and at Trinity Church Square, ten minutes to the south; the exact frames are not documented. Recreate the mood instead: Sherlock and John in step behind a dog with a famous nose.",
-              "recognise": "A big “Borough Market” sign over a green iron-and-glass hall, with food stalls beneath it and railway viaducts above.",
-              "directions": {
-                "mode": "walk",
-                "minutes": 19,
-                "meters": 1450,
-                "text": "Continue east along the riverside past Tate Modern and Shakespeare's Globe, then along Bankside and Clink Street to Southwark Cathedral; the market is just behind it."
-              },
-              "minutes": 30
-            },
-            {
-              "location": "trinity-church-square",
-              "scenes": ["sherlock-toby-square"],
-              "media": ["sherlock-toby-square-still", "trinity-church-square-photo"],
-              "narration": "The other half of Toby's trail: the bloodhound scenes of “The Six Thatchers” were filmed here as well as at Borough Market. The frames are not documented, so walk the square with your nose down, then frame the stone king on his plinth in front of the old church, now Henry Wood Hall, where orchestras rehearse.",
-              "recognise": "A quiet garden square of long terraces, with a former church in the middle and a stone statue of a king on a plinth.",
-              "directions": {
-                "mode": "walk",
-                "minutes": 13,
-                "meters": 960,
-                "text": "Walk south down Borough High Street and turn left into Trinity Street, which leads into the square. Follow the route on the map."
-              },
-              "minutes": 15
             }
           ]
         },
         {
           "id": "love-actually",
           "title": "Love, actually",
-          "intro": "End the day in Richard Curtis's Christmas London: the jewellery counter of Selfridges and the chapel of the wedding, a last Sherlock stop at the fake house fronts of Leinster Gardens, and, at dusk, the doorstep in Notting Hill where Mark holds up his cue cards.",
+          "intro": "End the day in Richard Curtis's Christmas London: the jewellery counter of Selfridges, the chapel of the wedding and, at dusk, the doorstep in Notting Hill where Mark holds up his cue cards.",
           "stops": [
             {
               "location": "selfridges",
@@ -6400,9 +6176,9 @@
               "recognise": "A vast department store filling a whole block of Oxford Street, with giant stone columns and a big clock over the main entrance.",
               "directions": {
                 "mode": "tube",
-                "minutes": 35,
-                "meters": 5800,
-                "text": "Walk to Borough station (about five minutes) and take the Northern line one stop to London Bridge, then the Jubilee line five stops west to Bond Street; Selfridges is a few minutes' walk west along Oxford Street."
+                "minutes": 25,
+                "meters": 3900,
+                "text": "Walk to Southwark station (about ten minutes) and take the Jubilee line four stops west to Bond Street; Selfridges is a few minutes' walk west along Oxford Street."
               },
               "minutes": 30
             },
@@ -6421,30 +6197,16 @@
               "minutes": 15
             },
             {
-              "location": "leinster-gardens",
-              "scenes": ["sherlock-empty-house"],
-              "media": ["leinster-gardens-photo"],
-              "narration": "In “His Last Vow”, Sherlock calls this “the empty house”: numbers 23 and 24 are only fronts, built in the 1860s to hide the Metropolitan Railway, and the episode puts an alleyway behind them where Mary reveals who she really is. The shots are not identified; frame the two façades from the opposite pavement, and look for the grey windows and the doors with no letter boxes.",
-              "recognise": "Two house fronts that match the cream terrace, except that their windows are painted dark grey and their doors have no letter boxes.",
-              "directions": {
-                "mode": "tube",
-                "minutes": 30,
-                "meters": 3000,
-                "text": "Walk north to Marble Arch station (about 12 minutes) and take the Central line two stops west to Queensway. Walk east along Bayswater Road and turn left up Leinster Terrace, which becomes Leinster Gardens; numbers 23 and 24 are on the left."
-              },
-              "minutes": 15
-            },
-            {
               "location": "st-lukes-mews",
               "scenes": ["la-cue-cards"],
               "media": ["la-cue-cards-still", "st-lukes-mews-photo", "la-cue-cards-video"],
               "narration": "The last shot of the day: Mark's cue cards at the door of number 27, on Christmas Eve. The camera stands in the mews, facing the door. People live here, so keep it quick and quiet, never knock, and leave no notes.",
               "recognise": "A narrow cobbled mews off All Saints Road, lined with small pastel-coloured houses and climbing plants; number 27 is the door.",
               "directions": {
-                "mode": "walk",
-                "minutes": 27,
-                "meters": 1980,
-                "text": "Head west to Westbourne Grove and follow it into Notting Hill, then go north to All Saints Road and St Luke's Mews. Follow the route on the map."
+                "mode": "tube",
+                "minutes": 35,
+                "meters": 4400,
+                "text": "Walk north to Bond Street station (about ten minutes) and take the Elizabeth line one stop west to Paddington, then the Hammersmith & City or Circle line two stops west to Westbourne Park. St Luke's Mews is about eight minutes' walk south. Follow the route on the map."
               },
               "minutes": 15
             }
@@ -6453,23 +6215,15 @@
       ],
       "cataloguing": {
         "status": "draft",
-        "sources": [
-          "ref-britmovietours-love-actually",
-          "ref-virginmedia-sherlock",
-          "ref-lbtp-sherlock",
-          "ref-hopper-sherlock",
-          "ref-wikipedia-six-thatchers",
-          "ref-wikipedia-his-last-vow",
-          "ref-openstreetmap"
-        ],
-        "modified": "2026-10-17"
+        "sources": ["ref-britmovietours-love-actually", "ref-wikidata", "ref-openstreetmap"],
+        "modified": "2026-10-19"
       }
     },
     {
       "id": "the-game-is-on",
       "region": "london",
       "title": "The game is on",
-      "premise": "A trail for young detectives through the London of the TV series Sherlock: four cases, seven stops, from the hospital where Sherlock and John first meet to the roof Sherlock falls from.",
+      "premise": "A trail for young detectives through the London of the TV series Sherlock: five cases, eleven stops, from the hospital where Sherlock and John first meet to the roof Sherlock falls from.",
       "pointOfView": "Young detectives on Sherlock's trail",
       "audience": "Families and young Sherlock fans (about 10–15)",
       "defaults": {"tone": "young", "competence": "intro", "length": "brief"},
@@ -6512,8 +6266,29 @@
           ]
         },
         {
+          "id": "his-last-vow",
+          "title": "Case 2: His Last Vow",
+          "intro": "In “His Last Vow”, Sherlock finds out that someone close to John has been hiding a big secret, and he sets up a meeting in a very strange house to uncover it.",
+          "stops": [
+            {
+              "location": "leinster-gardens",
+              "scenes": ["sherlock-empty-house"],
+              "media": ["leinster-gardens-photo"],
+              "narration": "Look closely at numbers 23 and 24: they are not real houses! They are only fronts, about one and a half metres thick, built in the 1860s to hide the steam railway behind them. Can you spot the clues? Their windows are painted grey and their front doors have no letter boxes. Sherlock calls this place “the empty house”.",
+              "recognise": "Two house fronts that match the cream terrace, except that their windows are painted dark grey and their doors have no letter boxes.",
+              "directions": {
+                "mode": "tube",
+                "minutes": 30,
+                "meters": 4000,
+                "text": "Walk to Warren Street station (about five minutes) and take the Victoria line one stop south to Oxford Circus, then the Central line four stops west to Queensway. Walk east along Bayswater Road and turn left up Leinster Terrace, which becomes Leinster Gardens; numbers 23 and 24 are on the left."
+              },
+              "minutes": 15
+            }
+          ]
+        },
+        {
           "id": "blind-banker",
-          "title": "Case 2: The Blind Banker",
+          "title": "Case 3: The Blind Banker",
           "intro": "In “The Blind Banker”, mysterious symbols appear painted on walls all over London, and Sherlock and John must crack the code before anyone else gets hurt.",
           "stops": [
             {
@@ -6524,9 +6299,9 @@
               "recognise": "Red lanterns strung across a pedestrian street, red lamp posts and an ornate Chinese gate.",
               "directions": {
                 "mode": "tube",
-                "minutes": 15,
-                "meters": 2000,
-                "text": "Walk to Warren Street station and take the Northern line three stops south to Leicester Square, then walk two minutes north to Gerrard Street."
+                "minutes": 25,
+                "meters": 4300,
+                "text": "Walk back to Queensway station and take the Central line five stops east to Tottenham Court Road. Walk south down Charing Cross Road into Chinatown; Gerrard Street is the pedestrian street hung with red lanterns. Follow the route on the map."
               },
               "minutes": 25
             },
@@ -6548,7 +6323,7 @@
         },
         {
           "id": "six-thatchers",
-          "title": "Case 3: The Six Thatchers",
+          "title": "Case 4: The Six Thatchers",
           "intro": "In “The Six Thatchers”, someone is smashing little statues of Margaret Thatcher, a famous prime minister, and Sherlock wants to know why.",
           "stops": [
             {
@@ -6566,26 +6341,68 @@
               "minutes": 20
             },
             {
+              "location": "vauxhall-bridge",
+              "scenes": ["sherlock-vauxhall-bridge"],
+              "media": ["vauxhall-bridge-photo"],
+              "narration": "In “The Six Thatchers”, Sherlock runs across this bridge towards the big green-and-cream building at its end. It is the real headquarters of MI6, Britain's secret service, and it appears in James Bond films too! The bridge has a secret of its own: eight giant bronze statues that you cannot see from the bridge itself. Walk down to the riverside to find them.",
+              "recognise": "A steel arch bridge with red-painted arches and bronze statues against its piers; at the south end, the stepped green-and-cream SIS Building.",
+              "directions": {
+                "mode": "walk",
+                "minutes": 26,
+                "meters": 1940,
+                "text": "Walk south along the riverside, past Westminster Bridge, St Thomas' Hospital and Lambeth Bridge, then along the Albert Embankment to Vauxhall Bridge."
+              },
+              "minutes": 20
+            },
+            {
               "location": "borough-market",
               "scenes": ["sherlock-toby"],
               "media": ["borough-market-photo", "sherlock-toby-still"],
               "narration": "Sherlock and John follow Toby the bloodhound through these streets. Funny fact: the real dog hardly moved at all during filming! Close your eyes and sniff the air like Toby: what can you smell?",
               "recognise": "A big “Borough Market” sign over a green iron-and-glass hall, with food stalls and crowds underneath.",
               "directions": {
-                "mode": "walk",
-                "text": "Walk east along the riverside path, past the OXO Tower and Tate Modern, to Southwark Cathedral; the market is just behind it. About 35 minutes.",
-                "meters": 2630,
-                "minutes": 35
+                "mode": "tube",
+                "minutes": 30,
+                "meters": 3900,
+                "text": "Walk to Vauxhall station, beside the south end of the bridge, and take the Victoria line three stops north to Green Park, then the Jubilee line four stops east to London Bridge. Borough Market is a few minutes' walk away, beside Southwark Cathedral."
               },
               "minutes": 30
+            },
+            {
+              "location": "trinity-church-square",
+              "scenes": ["sherlock-toby-square"],
+              "media": ["trinity-church-square-photo", "sherlock-toby-square-still"],
+              "narration": "The other half of Toby's trail: the bloodhound scenes were filmed in this quiet square too. Toby is a nod to the old Sherlock Holmes stories, where a trained dog with a great nose helps Holmes and Watson follow a trail. Now find the stone king on his plinth: scientists found that his legs are Roman, much older than the rest of him!",
+              "recognise": "A quiet garden square of long terraces, with a former church in the middle and a stone statue of a king on a plinth.",
+              "directions": {
+                "mode": "walk",
+                "minutes": 13,
+                "meters": 960,
+                "text": "Walk south down Borough High Street and turn left into Trinity Street, which leads into the square. Follow the route on the map."
+              },
+              "minutes": 15
             }
           ]
         },
         {
           "id": "reichenbach-fall",
-          "title": "Case 4: The Reichenbach Fall",
-          "intro": "The biggest mystery of the whole series: in “The Reichenbach Fall”, Sherlock stands on a hospital roof, says goodbye to John on the phone, and falls. Fans waited two whole years to find out how he survived.",
+          "title": "Case 5: The Reichenbach Fall",
+          "intro": "In “The Reichenbach Fall”, Moriarty, a criminal mastermind, goes on trial, and then comes the biggest mystery of the whole series: Sherlock stands on a hospital roof, says goodbye to John on the phone, and falls. Fans waited two whole years to find out how he survived.",
           "stops": [
+            {
+              "location": "old-bailey",
+              "scenes": ["sherlock-old-bailey"],
+              "media": ["old-bailey-photo"],
+              "narration": "This is the Old Bailey, London's most famous criminal court. In “The Reichenbach Fall”, Sherlock is called here as a witness at Moriarty's trial. The courtroom scenes were filmed far away, in Swansea in Wales, but the outside is the real thing. Look up at the golden statue on the dome: Lady Justice, with a sword and scales. Is she wearing a blindfold?",
+              "recognise": "A long stone court building with a green dome topped by a gilded statue of Lady Justice holding a sword and scales.",
+              "directions": {
+                "mode": "walk",
+                "minutes": 32,
+                "meters": 2390,
+                "text": "Walk north-west through Southwark to Blackfriars Bridge, cross the river and continue north to the Old Bailey. Follow the route on the map."
+              },
+              "minutes": 15
+            },
             {
               "location": "st-bartholomews-hospital",
               "scenes": ["sherlock-reichenbach-fall"],
@@ -6598,9 +6415,9 @@
               "recognise": "Back on Giltspur Street: look up at the hospital's corner, with its carved name and the roofline above.",
               "directions": {
                 "mode": "walk",
-                "text": "Cross the river by Southwark Bridge and walk north past St Paul's Cathedral to Giltspur Street, about 30 minutes. Follow the route on the map.",
-                "meters": 2080,
-                "minutes": 28
+                "minutes": 3,
+                "meters": 250,
+                "text": "Cross Newgate Street and walk up Giltspur Street to the hospital's corner."
               },
               "minutes": 20
             }
@@ -6617,9 +6434,25 @@
           "ref-wikipedia-six-thatchers",
           "ref-wikipedia-reichenbach-fall",
           "ref-denofgeek-six-thatchers",
-          "ref-openstreetmap"
+          "ref-openstreetmap",
+          "ref-wikidata",
+          "ref-wikipedia-barts",
+          "ref-commons-speedys",
+          "ref-wikipedia-leinster-gardens",
+          "ref-wikipedia-his-last-vow",
+          "ref-wikipedia-chinatown-london",
+          "ref-wikipedia-queen-elizabeth-hall",
+          "ref-wikipedia-sea-life-london",
+          "ref-wikipedia-county-hall",
+          "ref-nhle",
+          "ref-wikipedia-vauxhall-bridge",
+          "ref-wikipedia-old-bailey",
+          "ref-wikipedia-sis-building",
+          "ref-wikipedia-borough-market",
+          "ref-wikipedia-trinity-church-square",
+          "ref-hopper-sherlock"
         ],
-        "modified": "2026-10-16"
+        "modified": "2026-10-19"
       }
     }
   ],

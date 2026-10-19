@@ -3,9 +3,9 @@
    Inspiration  French and British travel posters of the 1920s and 30s: A. M. Cassandre's railway
                 posters and the London Underground posters. A poster sells a place at a glance:
                 one strong picture, a short title in Art Deco letters, flat colours.
-   Audience     The general theme, which fits any film or series, now or added later: the stories that
-                combine several productions, Two Parisiennes (Alice's class: Amélie and Emily in
-                Paris) and Shot for shot (Bruno and Beatrix: Love Actually and Sherlock).
+   Audience     The general theme, which fits any film or series, now or added later: Emily's Paris
+                (Alice's class) and Shot for shot (Bruno and Beatrix recreating the shots of Love
+                Actually).
    Rules        - Limelight (Nicole Fally, Sorkin Type, 2011), an Art Deco display face, for titles
                   only: its high contrast needs large sizes. Jost (Owen Earl, indestructible type*), a
                   geometric sans after the German sans-serifs of the 1920s such as Futura (1927), for
@@ -189,17 +189,25 @@ h3 {
 
 /* ------------------------------------------------- start page: poster cards */
 
-/* The title is a poster of its own, under a sunburst. */
+/* The title is a poster of its own, under a sunburst, with its text at the foot (and scrolling when
+   it is longer than the poster). */
 .lmml-hero {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   background: repeating-conic-gradient(from 0deg at 50% 130%, var(--ink) 0 5deg, #2a3b63 5deg 10deg);
   color: var(--cream);
 }
 
+.lmml-hero > :first-child {
+  margin-top: auto;
+}
+
 .lmml-hero h1 {
   font-size: clamp(var(--step-2), 5vw, var(--step-3));
+}
+
+.lmml-hero h2 {
+  color: var(--ochre);
 }
 
 [data-panel="stories"] {

@@ -158,13 +158,26 @@ a {
 
 /* ------------------------------------------ start page: title page, index cards */
 
-/* The start page is a title page: the title centred halfway down the sheet. */
+/* The start page is a title page: the title centred halfway down the sheet (scrolling when the
+   text is longer than the sheet), the text below it set as on a page. */
 .lmml-hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.lmml-hero > :first-child {
+  margin-top: auto;
+}
+
+.lmml-hero > :last-child {
+  margin-bottom: auto;
+}
+
+.lmml-hero p,
+.lmml-hero ul {
+  text-align: left;
 }
 
 .lmml-card {

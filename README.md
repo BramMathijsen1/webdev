@@ -19,11 +19,12 @@ Then open http://localhost:8000/. A local servers is needed for the back-end fro
 ## Contents
 
 - **32 locations**: 17 in Paris (*Amélie*, *Emily in Paris*, and monuments) and 15 in London (*Love Actually*, *Sherlock*). Each has camera positions, credited pictures, stills, sourced facts and nine texts. 13 scenes have an official video clip embeddings, all from Youtube (not locally downloaded).
-- **4 stories**:
-  - *Two Parisiennes*: a class trip.
+- **4 stories**, one per film or series:
   - *Amélie, scene by scene*.
-  - *Shot for shot*: recreating London shots.
+  - *Emily's Paris*: a class trip.
+  - *Shot for shot*: recreating the London shots of *Love Actually*.
   - *The game is on*: a Sherlock trail for young detectives.
+- **A start page** with an introduction, the stories and a map of each city with every location.
 - **2 themes**: *Affiche* (1920s–30s travel posters) and *Script* (screenplays and production paperwork). Both are CSS-only and can be replaced; see `design.md`, chapter 3.
 - **Languages**: the texts are in English; the language menu at the top right translates a page into French, Dutch, German, Spanish or Italian.
 
